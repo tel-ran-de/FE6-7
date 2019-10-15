@@ -1,0 +1,9 @@
+1. Front End developers - what does they develop.
+2. Program of the course: HTML5, CSS3, JavaScript, jQuery, Bootstrap, Angular
+3. Resources: https://www.w3schools.com (!!!), https://getbootstrap.com/, https://jquery.com/
+3. Browsers - what are they for, variety of browsers (Chrome, Firefox, Interner Explorer, Microsoft Edge)
+4. Can we display simple txt file in browser?
+5. HTML - hello word page
+6. 
+
+
