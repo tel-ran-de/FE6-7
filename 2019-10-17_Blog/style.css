@@ -1,0 +1,9 @@
+.banner {
+	margin: -8px -8px 0px -8px;
+}
+.banner img {
+	max-width: 100%;
+}
+div.article-digest img {
+    max-width: 500px;
+}
