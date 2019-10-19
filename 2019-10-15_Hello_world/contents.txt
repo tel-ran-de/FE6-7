@@ -1,9 +1,18 @@
 1. Front End developers - what does they develop.
 2. Program of the course: HTML5, CSS3, JavaScript, jQuery, Bootstrap, Angular
-3. Resources: https://www.w3schools.com (!!!), https://getbootstrap.com/, https://jquery.com/
-3. Browsers - what are they for, variety of browsers (Chrome, Firefox, Interner Explorer, Microsoft Edge)
-4. Can we display simple txt file in browser?
-5. HTML - hello word page
-6. 
-
-
+3. Resources: https://www.w3schools.com (!!!), https://getbootstrap.com/, https://jquery.com/,
+   https://angular.io/
+4. Browsers - what are they for, variety of browsers (Chrome, Firefox, Interner Explorer, Microsoft Edge)
+5. Can we display simple txt file in browser?
+5. Tools to edit HTML, CSS, JS files - Visual Studio Code, Notepad++, IntelliJ Idea 
+6. HTML - hello word page
+7. Tags - what are they for, HTML document structure - tags html, head, body
+7.1 head tags: title and meta
+7.2 body tags: h1,...,h5, p, div
+8. Simple CSS introduction and styling (style tag in head, simple tag selectors)
+9. Chrome browser development panel.
+9. Using external CSS (link tag in head)
+10. Role of the meta charset and meta name="viewport" tags 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+8. Creating a simple form in HTML (tags form, label, input). 
