@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Article 1</title>
+    </head>
+    <body>
+        <div class="banner">
+            <h1>This is my personal blog </h1>
+        </div>
+        <div class="article">
+            <img src="ruk.jpg">
+            <h2>Death note... (Part one)</h2>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel mattis ipsum, et pretium quam. Phasellus imperdiet fringilla mauris. Vestibulum commodo felis felis, id convallis lorem vulputate vel. Suspendisse posuere ligula a sapien cursus commodo. Nullam tempus, ligula et mollis vulputate, sem nisi maximus lorem, sit amet elementum diam purus quis urna. Integer arcu magna, dignissim sit amet nisl nec, interdum pharetra est. Integer egestas luctus dui eget suscipit. Nam eget vehicula metus. Morbi suscipit cursus finibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam non nisl lobortis, commodo nibh in, egestas magna.
+            </p>
+            <p>
+            In cursus dolor sit amet magna tempor lacinia. Pellentesque accumsan hendrerit congue. Vestibulum a vulputate lacus, nec congue tellus. Etiam a sagittis nulla, tincidunt malesuada tellus. Curabitur pretium lacus vitae luctus eleifend. Suspendisse elit massa, luctus vel aliquam a, molestie nec turpis. Nullam mauris lectus, lobortis tincidunt feugiat at, fringilla nec ligula. Praesent mollis mollis erat, non vestibulum velit.
+            </p>
+            <p>
+            Cras eget sem vitae velit vehicula hendrerit a et ex. Curabitur ut nibh condimentum, efficitur massa non, tristique quam. Cras pretium diam ipsum, ut gravida quam pulvinar ac. Nulla sagittis faucibus mollis. Nunc id est accumsan, ornare orci nec, euismod dui. Praesent eget nulla sagittis leo auctor euismod. Nam et nisl sagittis, suscipit leo vel, tempor dui. Nunc ipsum massa, congue eget aliquam id, aliquam eu diam. Donec lobortis dolor vel ex consequat pharetra. Maecenas sed nibh et dui ullamcorper mattis ullamcorper ut diam. Nullam tincidunt, neque eget imperdiet convallis, eros est aliquam tortor, a dictum magna ligula ut ex. In fringilla felis erat, quis porttitor massa eleifend at. Duis bibendum justo tellus, accumsan gravida dolor maximus ut. Proin auctor interdum commodo. Praesent aliquet ipsum tortor, ac sagittis tellus sodales quis.
+            </p>
+            <p>
+            Ut quis viverra ligula. Proin finibus, nunc eget semper rhoncus, libero lectus aliquam augue, id pulvinar nisl massa quis felis. Phasellus et mattis nulla, at venenatis diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras placerat mi vitae turpis accumsan, a sodales nisl accumsan. Mauris dapibus feugiat sapien, cursus sodales justo feugiat eu. Curabitur molestie ipsum at libero egestas rhoncus. Proin auctor sodales vulputate. Donec placerat mauris et tortor lobortis malesuada ut eget lacus. Integer mattis arcu quis ex ultricies ullamcorper at id ante. Etiam sit amet purus at nisi tristique dictum. Integer sed magna vel est aliquet mollis. Donec eleifend in augue quis fermentum. Etiam ultricies ante non tempor ullamcorper.
+            </p>
+            <p>
+            Sed lacinia augue id ligula sodales maximus. Duis ante metus, cursus sit amet consectetur ac, lobortis nec diam. Fusce lectus nulla, consectetur tincidunt consectetur et, molestie id magna. Nulla pellentesque nulla lacus. Cras nec tempor magna, at facilisis velit. Nullam ultricies diam in erat convallis ornare eu quis purus. Vivamus vitae auctor diam. Etiam vitae commodo lorem. Vestibulum vitae mauris metus. Phasellus mattis tempus eros ut suscipit. Vestibulum condimentum ac sapien eu pellentesque. Nulla facilisi.
+            </p>
+            <p>
+            Suspendisse eu varius orci. Etiam semper laoreet fermentum. Nullam non mauris sed mauris faucibus imperdiet at ac eros. Phasellus posuere dictum efficitur. Duis dapibus lobortis nisl et pharetra. Vestibulum euismod risus vitae est iaculis elementum. Fusce ornare pharetra est ac convallis. Nam euismod turpis auctor lacinia gravida. Morbi at convallis diam. Aliquam felis ex, vestibulum ac convallis at, vulputate at massa. Etiam id tortor sed lectus accumsan eleifend ut ac arcu. Donec imperdiet sodales est, eu laoreet purus tristique in. Aliquam lobortis iaculis nunc, vel volutpat velit tincidunt vel. Aenean in interdum erat, sed ultricies libero.
+            </p>
+            <p>
+            Donec ac dapibus velit. Nulla consequat ante ut ex rhoncus, quis ultricies ligula interdum. Aenean gravida ligula et enim dapibus, in fringilla elit dignissim. Praesent vulputate a orci et imperdiet. Nulla et erat ligula. Mauris mattis sagittis fermentum. Cras finibus tellus pulvinar interdum vulputate. Proin et rutrum lectus, eu dignissim justo.
+            </p>
+			
+        </div>
+
+
+    </body>
+</html>
