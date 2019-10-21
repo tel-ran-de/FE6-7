@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Article 2</title>
+    </head>
+    <body>
+        <div class="banner">
+            <h1>This is my personal blog </h1>
+        </div>
+        <div class="article">
+            <img src="ruk1.jpg">
+            <h2>Death note... (Part two)</h2>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in justo ut metus molestie lobortis sed eget ipsum. Vivamus sed malesuada ligula, sed vestibulum lectus. Quisque finibus malesuada urna id commodo. Aliquam quis porttitor leo. Sed gravida a massa vitae mattis. Ut et metus quis velit malesuada pretium at et tortor. Maecenas sed justo quis ex fringilla hendrerit feugiat vel lacus. Suspendisse fringilla ac sem vel congue. Fusce iaculis lacinia egestas. Quisque ultricies ultricies massa at elementum. Sed luctus, magna at iaculis ultrices, lacus mi feugiat quam, sit amet iaculis felis turpis ut enim. Sed eu dui sem. Mauris sit amet nisl ac erat pharetra tempus.
+            </p>
+            <p>
+            Fusce laoreet ex et quam pellentesque mattis ut viverra lorem. Pellentesque vestibulum nunc sed sapien vehicula aliquam. Nam sed mauris maximus, bibendum arcu aliquet, tempor metus. Nam dictum magna vel justo molestie, in imperdiet nunc vestibulum. Nulla pretium rutrum enim ut feugiat. Maecenas nisl diam, finibus ac porttitor eu, interdum sit amet magna. Nunc accumsan sem elit, eget convallis lorem ultrices vel. Curabitur ac pellentesque erat. Fusce laoreet nulla lorem, id molestie nibh tempor eget. Aenean libero elit, rhoncus vitae tempor vitae, imperdiet non tortor.
+            </p>
+            <p>
+            Nam in odio accumsan, ornare est quis, condimentum mauris. Suspendisse ex erat, tempus vitae convallis non, viverra nec lorem. Praesent imperdiet arcu in placerat consequat. Aenean risus nulla, tempor in feugiat vel, luctus id magna. Cras quam justo, sagittis non pharetra vel, tempor ut sem. Ut faucibus interdum est, sit amet aliquam velit. Donec iaculis libero sit amet est vulputate consectetur. Nam at auctor sapien. Proin orci augue, posuere vitae hendrerit egestas, luctus ac ligula. Suspendisse vitae faucibus diam. Donec nulla ex, placerat lacinia rhoncus in, rhoncus porttitor tellus. Donec vel consequat magna. Cras quis ornare ex. Morbi ullamcorper semper turpis et convallis. Etiam et nisi eget purus pretium pulvinar in nec nisi.
+            </p>
+        </div>
+    </body>
+	
+	<a href="index1.html"> Go to page "Hello world"</a>
+	
+</html>
