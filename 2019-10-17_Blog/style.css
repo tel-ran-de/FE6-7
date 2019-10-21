@@ -27,5 +27,16 @@
 }
 
 div.article-digest img {
-    max-width: 500px;
+    height:250px;
+	width: 500px;
 }
+div.article img{
+	height: 250px;
+	width:500px;
+	
+}
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
