@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Article 2</title>
+    </head>
+    <body>
+        <div class="banner">
+            <h1>This is my personal blog </h1>
+        </div>
+        <div class="article">
+            <img src="ruk2.jpg">
+            <h2>Death note... (Part three)</h2>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum iaculis est sit amet nibh posuere, vel eleifend ipsum tempor. Sed malesuada neque sit amet massa ultrices semper. Curabitur vitae metus in diam facilisis dapibus blandit vel sapien. Integer suscipit justo arcu, sit amet consectetur arcu suscipit et. Pellentesque mollis leo est, a luctus turpis posuere sed. Donec vitae egestas est. Vivamus ac elit nec lacus volutpat condimentum. Aliquam venenatis, urna eu rhoncus porta, augue urna faucibus felis, ut cursus dolor mi vel sapien. Proin non rhoncus turpis. Suspendisse nec lectus consequat, porttitor ante sed, dignissim neque. Sed pharetra ac nisl sit amet consectetur.
+            </p>
+            <p>
+            Vivamus eleifend sed dolor sit amet ornare. Vestibulum dapibus ex id purus congue, nec ullamcorper nulla egestas. Duis ultricies orci et enim tempor congue. Nunc iaculis, lorem at lobortis mattis, elit velit volutpat sapien, sed accumsan tellus orci vitae libero. Proin vitae commodo tellus. Ut dapibus neque erat, ut luctus libero vestibulum id. Vivamus rhoncus, quam eget ullamcorper tempor, orci lorem sagittis dolor, non maximus nisl neque sed lectus. Duis at nunc sit amet leo condimentum lobortis. Integer fringilla felis ante, tristique lacinia massa scelerisque a. Proin malesuada lacinia leo, in accumsan urna tempor a. Proin ut purus pharetra, sollicitudin tellus in, tristique massa. Aenean ullamcorper enim at tristique feugiat. Maecenas id libero felis. Phasellus at efficitur justo. Nam dignissim arcu at turpis dapibus tincidunt.
+            </p>
+            <p>
+            Maecenas tristique malesuada est a fermentum. Vestibulum vel urna consequat urna luctus facilisis. In hac habitasse platea dictumst. Duis placerat dui nisl, tempor laoreet nulla fringilla in. Nunc at eros sed mi pulvinar semper. In pulvinar, eros ac molestie porttitor, risus mauris faucibus nisl, placerat vulputate nulla lectus sed augue. Aenean ac mauris at odio bibendum pharetra ut molestie justo. Suspendisse pulvinar tortor ut tempus posuere.
+            </p>
+			<p>
+            Suspendisse nec pharetra urna, id porta neque. Praesent posuere facilisis fringilla. Phasellus eget ex vel nunc scelerisque tincidunt. Duis suscipit sem sit amet bibendum facilisis. Proin semper sit amet velit in pellentesque. Integer mollis lobortis egestas. In fermentum sit amet tortor eget congue. In lobortis lacinia luctus. Pellentesque volutpat ante id felis porttitor, eu lacinia lorem elementum. In efficitur condimentum odio in tempus. Curabitur congue massa lacus, quis aliquet arcu aliquet sed. Aenean volutpat pellentesque viverra. Proin pellentesque, nisi sed faucibus imperdiet, felis justo varius quam, id vulputate elit libero vitae magna. Nam faucibus sem non leo blandit, vitae laoreet ligula posuere. Etiam nulla diam, aliquam a porta vel, dignissim vitae erat.
+            </p>
+			
+        </div>
+    </body>
+</html>
