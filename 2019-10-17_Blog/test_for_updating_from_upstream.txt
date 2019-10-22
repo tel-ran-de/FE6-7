@@ -1,1 +1,1 @@
-test_for_updating_from_upstream
+test_for_updating_from_upstream-ok
