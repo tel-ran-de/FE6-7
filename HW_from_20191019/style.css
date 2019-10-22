@@ -1,0 +1,50 @@
+/*.banner {
+	margin: -8px -8px 0 -8px;
+	height: 100px;
+	overflow: hidden;
+}
+.banner img {
+	height: auto;
+	width: 100%;
+}*/
+
+.banner {
+	height: 100px;
+	background-image: url('banner.jpg');
+	margin-bottom: 20px;
+	line-height: 100px;
+}
+
+.banner img {
+	height: auto;
+	width: 100%;
+}
+
+.banner h1 {
+	font-family: Calibri;
+	font-size: 30px;
+	color: red;
+}
+
+div.article-digest img {
+    max-width: 500px;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.box {
+     float: left;
+     padding: 20px;
+     background: #eee;
+}
+
+Add a link to the article1.html to go back from the article page to the previous page
+
+Add a link to the article2.html to go back from the article page to the index.html
+
+Make the whole text of the article digest on index.html the hyperlink to the article page
+
+Create pages for article 2 and article 3 (use article 1 page as an example)
