@@ -1,0 +1,21 @@
+.banner{
+	height:100px;
+	background-image: url('banner.jpg')
+	}
+
+.banner h1{
+	font-family:Calibri;
+	font-size:30px;
+	color:red;
+	line-height:100px;
+	}
+
+.banner img{
+	width:100%;
+	height:auto;
+}
+div.artical-digest img{
+	max-width:500px;
+	}
+
+.text {background-image:url('https://avatanplus.com/files/resources/original/58ff656811a4915ba5a41e88.jpg');}
