@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PostController {
     @GetMapping
     public String createNewPost(@RequestParam("title") String title,
-                                @RequestParam("postBody") String body) {
-        log.info("Request received. Title={}, body={}", title, body);
+                                @RequestParam("postBody") String body,
+                                @RequestParam("date") String date) {
+        log.info("Request received. Title={}, body={}, date={}", title, body,date);
         return "index.html";
     }
 }
