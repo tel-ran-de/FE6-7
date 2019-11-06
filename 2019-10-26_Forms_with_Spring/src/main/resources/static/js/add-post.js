@@ -11,7 +11,7 @@ $(document).ready(function () {
     var variable1 = $('small#titleHelp.form-text.text-muted');
     var variable2 = $('input#title.form-control');
     variable1.hide();
-    variable2.on("keydown", function () {
+    variable2.on("keypress", function () {
         variable1.show();
     });
     variable1.on("dblclick",function () {
