@@ -5,6 +5,19 @@ $(document).ready(function() {
             console.log(event);
         }
     );
+
+    $('#title.form-control').click(
+        function () {
+            alert("Be careful");
+        }
+    );
+
+   /* $('#title.form-control').keypress(
+        function () {
+            $("titleHelp").hidden();
+        }
+    );*/
+
 });
 
 
