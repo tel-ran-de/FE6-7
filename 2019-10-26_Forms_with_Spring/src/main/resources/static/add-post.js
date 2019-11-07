@@ -5,3 +5,19 @@ $(document).ready(function() {
             console.log(event);
         });
 });
+
+   $(document).ready(function() {
+        $('#title').click(
+            function () {
+            alert("Be careful")
+    });
+});
+
+
+//2
+    $(document).ready(function () {
+      $('#title').click(
+           function () {
+               $("#block").show();
+           });
+    });
