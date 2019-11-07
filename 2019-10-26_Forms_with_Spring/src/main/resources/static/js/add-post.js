@@ -20,7 +20,7 @@ $(document).ready(function() {
          },
 
         click: function(){
-            alert("Be careful , Danger !");
+            alert(" be careful ");
         }
     });
 });
