@@ -12,11 +12,13 @@ $(document).ready(function() {
         }
     );
 
-   /* $('#title.form-control').keypress(
+    $('#titleHelp').hide();
+
+    $('#title').keypress(
         function () {
-            $("titleHelp").hidden();
+            $('#titleHelp').show();
         }
-    );*/
+    )
 
 });
 
