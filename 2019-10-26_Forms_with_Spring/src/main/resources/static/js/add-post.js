@@ -5,6 +5,9 @@ $(document).ready(function() {
             console.log(event);
         }
     );
+
+    $('#title').click(
+        function () {
+            alert('please be so kind to write valid text');
+        });
 });
-
-
