@@ -12,6 +12,7 @@ $(function() {
 
     const $inputTitle = $('#title');
     const $inputBody = $('#textarea');
+    const inputs = [$inputTitle,$inputBody];
 
 
     function activateValidation ($input) {
@@ -43,12 +44,11 @@ $(function() {
         });
     }
 
-    function start() {
-        const inputs = [$inputTitle,$inputBody];
-        for(let input of inputs){activateValidation(input)}
+    function start($array) {
+        for(let input of $array){activateValidation(input)}
     }
 
-    start();
+    start(inputs);
 
     const isEmptyValidator = function ($input) {
         console.log($input.val());
