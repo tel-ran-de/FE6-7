@@ -30,6 +30,17 @@ $(function() {
         };
     };
 
+    const isNotMoreThanValidatorPostBody = function ($input) {
+        if ($input.val().length > 4096)
+            return {
+                valid: false,
+                errorMessage: "This field can't be more than 4096 symbols"
+            };
+        return {
+            valid: true
+        };
+    };
+
     const $inputTitle = $('#title');
     $inputTitle.on({
         focus: function(){
@@ -57,6 +68,25 @@ $(function() {
         }
     });
 
-
+    const $inputPostBody = $('#postBody');
+    $inputPostBody.on({
+        focus: function(){
+            $inputPostBody.removeClass('is-invalid');
+        },
+        blur: function(){
+            const validators = [isEmptyValidator, isNotMoreThanValidatorPostBody];
+            for (let validator of validators) {
+                let error = validator($inputPostBody);
+                if (!error.valid) {
+                    $inputPostBody.addClass('is-invalid');
+                    $inputPostBody.removeClass('is-valid');
+                    $inputPostBody.siblings('.invalid-feedback').html(error.errorMessage);
+                    return;
+                }
+            }
+            $inputPostBody.addClass('is-valid');
+            $inputPostBody.removeClass('is-invalid');
+        },
+    });
 });
 
