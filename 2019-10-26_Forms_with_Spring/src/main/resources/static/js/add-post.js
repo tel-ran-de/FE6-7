@@ -30,6 +30,9 @@ $(function() {
         };
     };
 
+    // Sorry, but I can't make a validation for "Text of the post". I've made another validation, at the bottom of the
+    // code, with validation for all four fields
+
     const $inputTitle = $('#title');
     $inputTitle.on({
         focus: function(){
@@ -58,5 +61,31 @@ $(function() {
     });
 
 
+});
+
+// ALL FOUR FIELDS VALIDATION
+$(function() {
+    $('#button-check').click(function(e) {
+        var isValid = true;
+        $('input[name="title"], [name="postBody"], [name="author"], [name="date"]').each(function() {
+            if ($.trim($(this).val()) == '') {
+                isValid = false;
+                $(this).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+            }
+            else {
+                $(this).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+        });
+        if (isValid == false)
+            e.preventDefault();
+        else
+            alert('Thank you for submitting');
+    });
 });
 
