@@ -57,6 +57,40 @@ $(function() {
         }
     });
 
+    //--------------------------------------------------------
+    const isNotMoreThan4096Validator = function ($input) {
+        if ($input.val().length > 4096)
+            return {
+                valid: false,
+                errorMessage: "This field can't be more then 4096 symbols"
+            };
+        return {
+            valid: true
+        };
+    };
+
+    const $inputPostText = $('#postText');
+    $inputPostText.on({
+        focus: function(){
+            $inputPostText.removeClass('is-invalid');
+        },
+        blur: function(){
+            const validators = [isEmptyValidator, isNotMoreThan4096Validator];
+            for (let validator of validators) {
+                let error = validator($inputPostText);
+                if (!error.valid) {
+                    $inputPostText.addClass('is-invalid');
+                    $inputPostText.removeClass('is-valid');
+                    $inputPostText.siblings('.invalid-feedback').html(error.errorMessage);
+                    return;
+                }
+            }
+            $inputPostText.addClass('is-valid');
+            $inputPostText.removeClass('is-invalid');
+        }
+    });
+
+    //-------------------------------------
 
 });
 
