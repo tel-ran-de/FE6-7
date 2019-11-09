@@ -47,43 +47,38 @@ $(function() {
         };
     };
 
+    const $inputTitle = $('#title');
+    const $inputBody = $('#postBody');
     const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
     const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
+    const title = {value:$inputTitle,validator:isNotMoreThan50Validator};
+    const body = {value:$inputBody,validator:isNotMoreThan4096Validator};
+    const array = [title,body];
 
-    const $inputTitle = $('#title');
-    $inputTitle.on({
-        focus: function(){
-            markInputPristine($inputTitle);
-        },
-        blur: function(){
-            const validators = [isEmptyValidator, isNotMoreThan50Validator];
-            for (let validator of validators) {
-                let error = validator($inputTitle);
-                if (!error.valid) {
-                    markInputInvalid($inputTitle, error.errorMessage);
-                    return;
+    function on($input,$validator) {
+        $input.on({
+            focus: function(){
+                markInputPristine($input);
+            },
+            blur: function(){
+                const validators = [isEmptyValidator, $validator];
+                for (let validator of validators) {
+                    let error = validator($input);
+                    if (!error.valid) {
+                        markInputInvalid($input,error);
+                        return;
+                    }
                 }
+                markInputValid($input);
             }
-            markInputValid($inputTitle);
+        });
+    }
+    function start($array){
+        for(let obj of $array){
+            on(obj.value,obj.validator);
         }
-    });
+    }
+    start(array);
 
-    const $inputBody = $('#postBody');
-    $inputBody.on({
-        focus: function(){
-            markInputPristine($inputBody);
-        },
-        blur: function(){
-            const validators = [isEmptyValidator, isNotMoreThan4096Validator];
-            for (let validator of validators) {
-                let error = validator($inputBody);
-                if (!error.valid) {
-                    markInputInvalid($inputBody, error.errorMessage);
-                    return;
-                }
-            }
-            markInputValid($inputBody);
-        },
-    });
 });
 
