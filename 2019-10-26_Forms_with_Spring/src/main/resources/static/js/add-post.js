@@ -1,5 +1,20 @@
 $(function() {
 
+    const markInputValid = function ($input) {
+        $input.addClass('is-valid');
+        $input.removeClass('is-invalid');
+    };
+
+    const markInputInvalid = function ($input, errorMessage) {
+        $input.addClass('is-invalid');
+        $input.removeClass('is-valid');
+        $input.siblings('.invalid-feedback').html(errorMessage);
+    };
+
+    const markInputPristine = function($input) {
+        $input.removeClass('is-invalid');
+    };
+
     $('button.btn.btn-primary').on('click',
         function (event) {
             event.preventDefault();
@@ -19,44 +34,56 @@ $(function() {
         };
     };
 
-    const isNotMoreThanValidator = function ($input) {
-        if ($input.val().length > 50)
+    const createIsNotMoreThanValidator = function(maxLength) {
+        return function ($input) {
+            if ($input.val().length > maxLength)
+                return {
+                    valid: false,
+                    errorMessage: "This field can't be more then " + maxLength + " symbols"
+                };
             return {
-                valid: false,
-                errorMessage: "This field can't be more then 50 symbols"
+                valid: true
             };
-        return {
-            valid: true
         };
     };
+
+    const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
+    const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
 
     const $inputTitle = $('#title');
     $inputTitle.on({
         focus: function(){
-            $inputTitle.removeClass('is-invalid');
+            markInputPristine($inputTitle);
         },
         blur: function(){
-            const validators = [isEmptyValidator, isNotMoreThanValidator];
+            const validators = [isEmptyValidator, isNotMoreThan50Validator];
             for (let validator of validators) {
                 let error = validator($inputTitle);
                 if (!error.valid) {
-                    $inputTitle.addClass('is-invalid');
-                    $inputTitle.removeClass('is-valid');
-                    $inputTitle.siblings('.invalid-feedback').html(error.errorMessage);
+                    markInputInvalid($inputTitle, error.errorMessage);
                     return;
                 }
             }
-            $inputTitle.addClass('is-valid');
-            $inputTitle.removeClass('is-invalid');
-        },
-        input : function(){
-            $("#titleHelp").show();
-        },
-        click: function(){
-            //alert("be careful");
+            markInputValid($inputTitle);
         }
     });
 
-
+    const $inputBody = $('#postBody');
+    $inputBody.on({
+        focus: function(){
+            markInputPristine($inputBody);
+        },
+        blur: function(){
+            const validators = [isEmptyValidator, isNotMoreThan4096Validator];
+            for (let validator of validators) {
+                let error = validator($inputBody);
+                if (!error.valid) {
+                    markInputInvalid($inputBody, error.errorMessage);
+                    return;
+                }
+            }
+            markInputValid($inputBody);
+        },
+    });
 });
 
