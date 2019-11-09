@@ -7,56 +7,68 @@ $(function() {
         }
     );
 
-    const isEmptyValidator = function ($input) {
-        console.log($input.val());
+    const Validator = function ($input, max) {
+
         if ($input.val().length === 0)
             return {
                 valid: false,
                 errorMessage: 'This field is required'
             };
-        return {
-            valid: true
-        };
-    };
-
-    const isNotMoreThanValidator = function ($input) {
-        if ($input.val().length > 50)
+        else
+        if ($input.val().length > max )
             return {
                 valid: false,
-                errorMessage: "This field can't be more then 50 symbols"
+                errorMessage: "This field can't be more then " +max+ " symbols"
             };
+        else
         return {
             valid: true
         };
     };
 
     const $inputTitle = $('#title');
-    $inputTitle.on({
-        focus: function(){
-            $inputTitle.removeClass('is-invalid');
-        },
-        blur: function(){
-            const validators = [isEmptyValidator, isNotMoreThanValidator];
-            for (let validator of validators) {
-                let error = validator($inputTitle);
-                if (!error.valid) {
-                    $inputTitle.addClass('is-invalid');
-                    $inputTitle.removeClass('is-valid');
-                    $inputTitle.siblings('.invalid-feedback').html(error.errorMessage);
-                    return;
+    const $inputPost = $('#textOfThePost');
+
+    const inputs = [$inputTitle, $inputPost];
+    //const maxLengths = [50,4096];
+    const maxLengths = [7,20];
+
+     for ( let i=0; i<inputs.length; i++)
+     {
+         let input = inputs[i];
+         let max = maxLengths[i];
+
+        input.on({
+            focus: function () {
+                input.removeClass('is-invalid');
+            },
+            blur: function () {
+                    let error = Validator(input,max);
+                    if (!error.valid) {
+                        input.addClass('is-invalid');
+                        input.removeClass('is-valid');
+                        input.siblings('.invalid-feedback').html(error.errorMessage);
+                        return;
                 }
-            }
-            $inputTitle.addClass('is-valid');
-            $inputTitle.removeClass('is-invalid');
-        },
-        input : function(){
+                input.addClass('is-valid');
+                input.removeClass('is-invalid');
+            },
+
+        });
+    }
+
+    $inputTitle.on({
+        input: function () {
             $("#titleHelp").show();
         },
-        click: function(){
+        blur: function () {
+            $("#titleHelp").hide();
+        },
+
+        click: function () {
             //alert("be careful");
         }
     });
-
 
 });
 
