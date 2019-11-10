@@ -55,24 +55,27 @@ $(function() {
         postBody: [isEmptyValidator, isNotMoreThan4096Validator]
     };
 
-    Object.keys(addPostForm).forEach(key => {
-        const $input = $('#' + key);
-        const validators = addPostForm[key];
-        $input.on({
-            focus: function(){
-                markInputPristine($input);
-            },
-            blur: function(){
-                for (let validator of validators) {
-                    let error = validator($input);
-                    if (!error.valid) {
-                        markInputInvalid($input, error.errorMessage);
-                        return;
+    function validate($object){
+        Object.keys($object).forEach(key => {
+            const $input = $(document.getElementsByName(key));
+            const validators = addPostForm[key];
+            $input.on({
+                focus: function(){
+                    markInputPristine($input);
+                },
+                blur: function(){
+                    for (let validator of validators) {
+                        let error = validator($input);
+                        if (!error.valid) {
+                            markInputInvalid($input, error.errorMessage);
+                            return;
+                        }
                     }
+                    markInputValid($input);
                 }
-                markInputValid($input);
-            }
+            });
         });
-    });
+    }
+    validate(addPostForm);
 });
 
