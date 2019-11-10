@@ -58,7 +58,7 @@ $(function() {
     function validate($object){
         Object.keys($object).forEach(key => {
             const $input = $(document.getElementsByName(key));
-            const validators = addPostForm[key];
+            const validators = $object[key];
             $input.on({
                 focus: function(){
                     markInputPristine($input);
