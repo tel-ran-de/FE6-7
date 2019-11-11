@@ -55,6 +55,7 @@ $(function() {
         postBody: [isEmptyValidator, isNotMoreThan4096Validator]
     };
 
+    /*
     Object.keys(addPostForm).forEach(key => {
         const $input = $('#' + key);
         const validators = addPostForm[key];
@@ -74,5 +75,34 @@ $(function() {
             }
         });
     });
+
+     */
+
+    //----------------------------------------
+    function generalValidation(addPostForm) {
+        Object.keys(addPostForm).forEach(key => {
+
+            const $input = $('[name = "' + key + '"]');
+
+            const validators = addPostForm[key];
+            $input.on({
+                focus: function(){
+                    markInputPristine($input);
+                },
+                blur: function(){
+                    for (let validator of validators) {
+                        let error = validator($input);
+                        if (!error.valid) {
+                            markInputInvalid($input, error.errorMessage);
+                            return;
+                        }
+                    }
+                    markInputValid($input);
+                }
+            });
+        });
+    }
+    generalValidation(addPostForm);
+
 });
 
