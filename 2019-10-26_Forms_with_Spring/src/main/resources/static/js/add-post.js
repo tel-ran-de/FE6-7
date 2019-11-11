@@ -22,6 +22,35 @@ $(function() {
         }
     );
 
+    const formValidate = function(  ) {
+
+        $('input').each(function(formElement) {
+
+            console.warn($(formElement));
+            validate($(formElement));
+        })
+    }
+
+    // Prüfe $input leer
+    function validate( $input ) {
+
+
+        $input.on({
+            focus: function(){
+                markInputPristine($input);
+            },
+            blur: function(){
+
+
+                if( isEmptyValidator($input).valid === false ) {
+                    markInputInvalid($input, not.errorMessage);
+                } else {
+                    markInputValid($input);
+                }
+            }
+        });
+    }
+
     const isEmptyValidator = function ($input) {
         console.log($input.val());
         if ($input.val().length === 0)
@@ -56,7 +85,7 @@ $(function() {
     };
 
     Object.keys(addPostForm).forEach(key => {
-        const $input = $('#' + key);
+        const $input = $('input[name="' + key + '"], textarea[name="' + key + '"]');
         const validators = addPostForm[key];
         $input.on({
             focus: function(){
