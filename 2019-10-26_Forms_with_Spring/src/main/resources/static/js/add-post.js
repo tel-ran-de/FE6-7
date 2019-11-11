@@ -46,17 +46,32 @@ $(function() {
             };
         };
     };
+    /* const createIsCurrentDateValidator = function (currentDate) {
+        {
+            var x = document.forms["signup"]["dateofsign"].value;
+            var reg = /(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d/;
+            if (x.match(reg)) {
+                return true;
+            }
+            else {
+                alert("Please enter dd/mm/yyyy");
+                return false;
+            }
+        }
+    } */
 
     const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
     const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
 
+
     const addPostForm = {
         title: [isEmptyValidator, isNotMoreThan50Validator],
-        postBody: [isEmptyValidator, isNotMoreThan4096Validator]
+        postBody: [isEmptyValidator, isNotMoreThan4096Validator],
+
     };
 
     Object.keys(addPostForm).forEach(key => {
-        const $input = $('#' + key);
+        const $input = $('[name = "' + key + '"]');
         const validators = addPostForm[key];
         $input.on({
             focus: function(){
