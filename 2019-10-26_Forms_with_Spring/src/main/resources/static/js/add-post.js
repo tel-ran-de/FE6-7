@@ -52,12 +52,15 @@ $(function() {
 
     const addPostForm = {
         title: [isEmptyValidator, isNotMoreThan50Validator],
-        postBody: [isEmptyValidator, isNotMoreThan4096Validator]
+        postBody: [isEmptyValidator, isNotMoreThan4096Validator],
     };
 
-    Object.keys(addPostForm).forEach(key => {
-        const $input = $('#' + key);
-        const validators = addPostForm[key];
+    validator(addPostForm);
+
+    function validator(addPostForm) {
+    Object.keys(addPostForm).forEach(name => {
+        const $input = $(document.getElementsByName(name));
+        const validators = addPostForm[name];
         $input.on({
             focus: function(){
                 markInputPristine($input);
@@ -73,6 +76,6 @@ $(function() {
                 markInputValid($input);
             }
         });
-    });
+    });}
 });
 
