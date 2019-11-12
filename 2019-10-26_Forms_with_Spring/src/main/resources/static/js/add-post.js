@@ -12,7 +12,7 @@ $(function() {
 
     validateForm(addPostForm);
 
-    $('input').on('blur', ()=> {
+    $('input, textarea').on('blur', ()=> {
         console.log(isFormValid(addPostForm))
     })
 
