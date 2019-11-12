@@ -29,3 +29,7 @@
 div.article-digest img {
     max-width: 500px;
 }
+
+#titleHelp {
+	display: none;
+}

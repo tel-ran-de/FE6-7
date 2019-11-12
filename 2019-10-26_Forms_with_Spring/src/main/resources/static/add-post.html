@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Add new post</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/add-post.js"></script>
 </head>
@@ -13,11 +14,13 @@
             <label>Title</label>
             <input id="title" class="form-control" name="title" type="text">
             <small id="titleHelp" class="form-text text-muted">Please type here the title of your post.</small>
+            <div class="invalid-feedback"></div>
         </div>
         <div class="form-group">
             <label>Text of the post</label>
-            <textarea class="form-control" name="postBody" rows="3"></textarea>
+            <textarea id="postBody" class="form-control" name="postBody" rows="3"></textarea>
             <small id="postHelp" class="form-text text-muted">Text of your post</small>
+            <div class="invalid-feedback"></div>
         </div>
         <div class="form-group">
             <label>Date</label>
