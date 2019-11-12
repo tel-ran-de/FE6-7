@@ -52,11 +52,12 @@ $(function() {
 
     const addPostForm = {
         title: [isEmptyValidator, isNotMoreThan50Validator],
-        postBody: [isEmptyValidator, isNotMoreThan4096Validator]
+        postBody: [isEmptyValidator, isNotMoreThan4096Validator],
+        author: [isEmptyValidator, isNotMoreThan4096Validator]
     };
 
     Object.keys(addPostForm).forEach(key => {
-        const $input = $('#' + key);
+        const $input = $('[name= "' + key + '"]');
         const validators = addPostForm[key];
         $input.on({
             focus: function(){
