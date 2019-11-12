@@ -66,3 +66,13 @@ let validateForm = function(form) {
         });
     });
 };
+
+let isFormValid = function(form) {
+    Object.keys(form.inputs).forEach(key => {
+        const $input = $('form#'+ form.id +' [name=' + key + ']');
+        console.log($input.hasClass('is-valid'));
+        if (!$input.hasClass('is-valid'))
+            return false;
+    });
+    return true;
+};
