@@ -43,7 +43,26 @@ const createIsNotMoreThanValidator = function(maxLength) {
     };
 };
 
+let isFormValid = function(form) {
+    for (let key of Object.keys(form.inputs)) {
+        const $input = $('form#'+ form.id +' [name=' + key + ']');
+        if (!$input.hasClass('is-valid'))
+            return false;
+    }
+    return true;
+};
+
+const disableFormButton = function(form) {
+    $('form#'+ form.id +' button').attr('disabled', true);
+};
+
+const enableFormButton = function(form) {
+    $('form#'+ form.id +' button').attr('disabled', false);
+};
+
 let validateForm = function(form) {
+    disableFormButton(form);
+
     Object.keys(form.inputs).forEach(key => {
         const $input = $('form#'+ form.id +' [name=' + key + ']');
         const validators = form.inputs[key];
@@ -63,13 +82,4 @@ let validateForm = function(form) {
             }
         });
     });
-};
-
-let isFormValid = function(form) {
-    for (let key of Object.keys(form.inputs)) {
-        const $input = $('form#'+ form.id +' [name=' + key + ']');
-        if (!$input.hasClass('is-valid'))
-            return false;
-    }
-    return true;
 };
