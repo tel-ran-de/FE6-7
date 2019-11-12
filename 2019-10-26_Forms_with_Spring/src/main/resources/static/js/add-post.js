@@ -47,32 +47,41 @@ $(function() {
         };
     };
 
-    const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
-    const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
+    //const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
+    //const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
 
     const addPostForm = {
-        title: [isEmptyValidator, isNotMoreThan50Validator],
-        postBody: [isEmptyValidator, isNotMoreThan4096Validator]
+        title: [isEmptyValidator, createIsNotMoreThanValidator(50)],
+        postBody: [isEmptyValidator, createIsNotMoreThanValidator(4096)],
+            author: [isEmptyValidator, createIsNotMoreThanValidator(10)]
     };
 
+function generalValidation (addPostForm){
+
     Object.keys(addPostForm).forEach(key => {
-        const $input = $('#' + key);
-        const validators = addPostForm[key];
-        $input.on({
+
+        //const $input = $(document.getElementsByName(key) );
+        //const validators = addPostForm[key];
+
+        $(document.getElementsByName(key) ).on({
             focus: function(){
-                markInputPristine($input);
+                markInputPristine($(this));
             },
             blur: function(){
-                for (let validator of validators) {
-                    let error = validator($input);
+                for (let validator of addPostForm[key]) {
+                    let error = validator($(this));
                     if (!error.valid) {
-                        markInputInvalid($input, error.errorMessage);
+                        markInputInvalid($(this), error.errorMessage);
                         return;
                     }
                 }
-                markInputValid($input);
+                markInputValid($(this));
             }
         });
     });
+ }
+
+ generalValidation (addPostForm);
+
 });
 
