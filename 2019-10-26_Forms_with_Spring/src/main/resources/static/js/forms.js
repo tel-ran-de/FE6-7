@@ -16,12 +16,10 @@ const markInputPristine = function($input) {
 $('button.btn.btn-primary').on('click',
     function (event) {
         event.preventDefault();
-        console.log(event);
     }
 );
 
 const isEmptyValidator = function ($input) {
-    console.log($input.val());
     if ($input.val().length === 0)
         return {
             valid: false,
@@ -68,11 +66,10 @@ let validateForm = function(form) {
 };
 
 let isFormValid = function(form) {
-    Object.keys(form.inputs).forEach(key => {
+    for (let key of Object.keys(form.inputs)) {
         const $input = $('form#'+ form.id +' [name=' + key + ']');
-        console.log($input.hasClass('is-valid'));
         if (!$input.hasClass('is-valid'))
             return false;
-    });
+    }
     return true;
 };
