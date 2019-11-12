@@ -12,5 +12,9 @@ $(function() {
 
     validateForm(addPostForm);
 
+    $('input').on('blur', ()=> {
+        console.log(isFormValid(addPostForm))
+    })
+
 });
 
