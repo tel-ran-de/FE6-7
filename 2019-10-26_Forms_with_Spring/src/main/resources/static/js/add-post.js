@@ -50,40 +50,29 @@ $(function() {
     const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
     const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
 
-    const $inputTitle = $('#title');
-    $inputTitle.on({
-        focus: function(){
-            markInputPristine($inputTitle);
-        },
-        blur: function(){
-            const validators = [isEmptyValidator, isNotMoreThan50Validator];
-            for (let validator of validators) {
-                let error = validator($inputTitle);
-                if (!error.valid) {
-                    markInputInvalid($inputTitle, error.errorMessage);
-                    return;
-                }
-            }
-            markInputValid($inputTitle);
-        }
-    });
+    const addPostForm = {
+        title: [isEmptyValidator, isNotMoreThan50Validator],
+        postBody: [isEmptyValidator, isNotMoreThan4096Validator]
+    };
 
-    const $inputBody = $('#postBody');
-    $inputBody.on({
-        focus: function(){
-            markInputPristine($inputBody);
-        },
-        blur: function(){
-            const validators = [isEmptyValidator, isNotMoreThan4096Validator];
-            for (let validator of validators) {
-                let error = validator($inputBody);
-                if (!error.valid) {
-                    markInputInvalid($inputBody, error.errorMessage);
-                    return;
+    Object.keys(addPostForm).forEach(key => {
+        const $input = $('#' + key);
+        const validators = addPostForm[key];
+        $input.on({
+            focus: function(){
+                markInputPristine($input);
+            },
+            blur: function(){
+                for (let validator of validators) {
+                    let error = validator($input);
+                    if (!error.valid) {
+                        markInputInvalid($input, error.errorMessage);
+                        return;
+                    }
                 }
+                markInputValid($input);
             }
-            markInputValid($inputBody);
-        },
+        });
     });
 });
 
