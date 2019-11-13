@@ -12,10 +12,15 @@ const markInputInvalid = function ($input, errorMessage) {
 const markInputPristine = function($input) {
     $input.removeClass('is-invalid');
 };
-
 $('button.btn.btn-primary').on('click',
+function (event) {
+    event.preventDefault();
+  }
+);
+$('button.btn.btn-primary new').on('click',
     function (event) {
-        event.preventDefault();
+        $("#client.frm")[0].reset();
+
     }
 );
 
