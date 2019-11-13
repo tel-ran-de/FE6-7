@@ -13,14 +13,12 @@
     <form id="addNewPostForm" action="/post">
         <div class="form-group">
             <label>Title</label>
-            <input class="form-control" name="title" type="text">
-            <small id="titleHelp" class="form-text text-muted">Please type here the title of your post.</small>
+            <input class="form-control" name="title" type="text" placeholder="Enter the Title">
             <div class="invalid-feedback"></div>
         </div>
         <div class="form-group">
             <label>Text of the post</label>
-            <textarea class="form-control" name="postBody" rows="3"></textarea>
-            <small id="postHelp" class="form-text text-muted">Text of your post</small>
+            <textarea class="form-control" name="postBody" rows="10" placeholder="Enter Text of your post"></textarea>
             <div class="invalid-feedback"></div>
         </div>
         <div class="form-group">
@@ -30,11 +28,19 @@
         </div>
         <div class="form-group">
             <label>Author</label>
-            <input class="form-control" name="author" type="text">
-            <small id="authorHelp" class="form-text text-muted">Please type the author of the post</small>
+            <input class="form-control" name="author_firstName" type="text" placeholder="Enter Author First Name">
+            <div class="invalid-feedback"></div>
+        </div>
+            <input class="form-control" name="author_lastName" type="text" placeholder="Enter Author Last Name">
+            <div class="invalid-feedback"></div>
+
+
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-danger" value="Reset">Reset</button>
+
+
     </form>
 </body>
 </html>
