@@ -26,4 +26,18 @@ public class PostController {
         );
         return "New post created";
     }
+
+   /* @GetMapping
+    public String createNewPostAuthor(
+            @RequestParam("author_firstName") String author_firstName,
+            @RequestParam("author_lastName") String author_lastName)
+    {
+        log.info(
+                "Request received. Title={}, body={}, date={}, author_firstName={}, author_lastName",
+
+                author_lastName,
+                author_lastName
+        );
+        return "New postAuthor created";
+    }*/
 }
