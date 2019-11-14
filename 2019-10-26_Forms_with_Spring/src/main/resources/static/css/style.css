@@ -33,3 +33,7 @@ div.article-digest img {
 #titleHelp {
 	display: none;
 }
+
+.alert {
+	display: none;
+}
