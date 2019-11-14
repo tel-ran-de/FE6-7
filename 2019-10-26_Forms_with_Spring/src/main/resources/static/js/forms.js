@@ -43,6 +43,8 @@ const createIsNotMoreThanValidator = function(maxLength) {
     };
 };
 
+// for bottom disable/enable
+
 let isFormValid = function(form) {
     for (let key of Object.keys(form.inputs)) {
         const $input = $('form#'+ form.id +' [name=' + key + ']');
@@ -53,37 +55,61 @@ let isFormValid = function(form) {
 };
 
 const disableFormButton = function(form) {
-    $('form#'+ form.id +' button').attr('disabled', true);
+     $('form#'+ form.id +" [type='submit']").attr('disabled', true);
 };
 
 const enableFormButton = function(form) {
-    $('form#'+ form.id +' button').attr('disabled', false);
+    $('form#'+ form.id +" [type='submit']").attr('disabled', false);
 };
 
-let validateForm = function(form) {
-    disableFormButton(form);
+// for function reset+submit bottom
 
-    Object.keys(form.inputs).forEach(key => {
+const markAllInputInvalid = function (form) {
+    Object.keys(form.inputs).forEach (key => {
         const $input = $('form#'+ form.id +' [name=' + key + ']');
-        const validators = form.inputs[key];
-        $input.on({
-            focus: function(){
-                markInputPristine($input);
-            },
-            blur: function(){
-                for (let validator of validators) {
-                    let error = validator($input);
-                    if (!error.valid) {
-                        markInputInvalid($input, error.errorMessage);
-                        disableFormButton(form);
-                        return;
+    $input.addClass('is-invalid');
+    $input.removeClass('is-valid');
+    $input.siblings('.invalid-feedback').html('This field is required');
+});
+};
+
+const resetSubmit = function(form) {
+$('form#'+ form.id +" [type='reset']").on("click", () =>{
+    $('form#'+ form.id +" [type='submit']").attr('disabled', true);
+    markAllInputInvalid (form);
+    });
+};
+
+// the main function
+
+let validateForm = function(form) {
+
+    // Подумайте, можем ли мы реорганизовать функцию validateForm,
+    // чтобы избавиться от вызовов функций, куда мы отправляем форму в качестве параметра.
+    //Think if we can refactor validateForm function to get rid of calls of functions
+    // where we send form as a parameter.
+
+        Object.keys(form.inputs).forEach(key => {
+            const $input = $('form#'+ form.id +' [name=' + key + ']');  /// probel - very important
+            const validators = form.inputs[key];
+            $input.on({
+                focus: function(){
+                    markInputPristine($input);
+                },
+                blur: function(){
+                    for (let validator of validators) {
+                        let error = validator($input);
+                        if (!error.valid) {
+                            markInputInvalid($input, error.errorMessage);
+                            disableFormButton(form);
+                            return;
+                        }
+                    }
+                    markInputValid($input);
+                   if (isFormValid(form)) {
+                     enableFormButton(form);
                     }
                 }
-                markInputValid($input);
-                if (isFormValid(form)) {
-                    enableFormButton(form);
-                }
-            }
-        });
+            });
     });
 };
