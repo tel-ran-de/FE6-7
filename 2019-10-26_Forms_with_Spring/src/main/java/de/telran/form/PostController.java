@@ -16,13 +16,15 @@ public class PostController {
     public String createNewPost(@RequestParam("title") String title,
                                 @RequestParam("postBody") String body,
                                 @RequestParam("date") String date,
-                                @RequestParam("author") String author) {
+                                @RequestParam("authorFirstName") String authorFirstName,
+                                @RequestParam("authorLastName") String authorLastName) {
         log.info(
-                "Request received. Title={}, body={}, date={}, author={}",
+                "Request received. Title={}, body={}, date={}, authorFirstName={}, authorLastName",
                 title,
                 body,
                 date,
-                author
+                authorFirstName,
+                authorLastName
         );
         return "New post created";
     }
