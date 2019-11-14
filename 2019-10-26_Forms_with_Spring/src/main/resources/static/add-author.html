@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new Author</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/add-author.js"></script>
+</head>
+<body class="container">
+<p> Author</p>
+<form id="addNewAuthorForm" action="/post">
+    <div class="form-group">
+        <label>First name</label>
+        <input class="form-control" name="firstName" type="text" value="">
+        <small id="firstNameHelp" class="form-text text-muted">Please type the author's first name of the post</small>
+        <div class="invalid-feedback"></div>
+    </div>
+    <div class="form-group">
+        <label>Last name</label>
+        <input class="form-control" name="lastName" type="text" value="">
+        <small id="lastNameHelp" class="form-text text-muted">Please type the author's last name of the post</small>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-primary">Clear form</button>
+</form>
+</body>
+</html>
