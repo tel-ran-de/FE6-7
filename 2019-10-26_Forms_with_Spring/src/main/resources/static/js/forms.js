@@ -55,13 +55,13 @@ let isFormValid = function(form) {
 };
 
 const disableFormButton = function(form) {
-     $('form#'+ form.id +' button').attr('disabled', true);
+     $('form#'+ form.id +" [type='submit']").attr('disabled', true);
 };
 
 // otkuda vzialsa atribut Disabled , iz bootstrap ili .. ?
 
 const enableFormButton = function(form) {
-    $('form#'+ form.id +' button').attr('disabled', false);
+    $('form#'+ form.id +" [type='submit']").attr('disabled', false);
 };
 
 // for bottom end
@@ -92,8 +92,6 @@ let validateForm = function(form) {
     //Think if we can refactor validateForm function to get rid of calls of functions
     // where we send form as a parameter.
 
-    // disableFormButton(form); // zasvetili knopky
-
 
         Object.keys(form.inputs).forEach(key => {
             const $input = $('form#'+ form.id +' [name=' + key + ']'); /// probel - vawno
@@ -117,6 +115,7 @@ let validateForm = function(form) {
                     }
                 }
             });
+
             //$('form#'+ form.id).mouseenter(function(){
               //  if (isFormValid(form)) {
                 //    enableFormButton(form);

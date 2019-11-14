@@ -16,28 +16,18 @@ public class PostController {
     public String createNewPost(@RequestParam("title") String title,
                                 @RequestParam("postBody") String body,
                                 @RequestParam("date") String date,
-                                @RequestParam("author") String author) {
+                                @RequestParam("authorFirstName") String authorFirstName,
+                                @RequestParam("authorLastName") String authorLastName   )
+    {
         log.info(
-                "Request received. Title={}, body={}, date={}, author={}",
+                "Request received. Title={}, body={}, date={} , authorFirstName={}, authorLastName={}",
                 title,
                 body,
                 date,
-                author
+                authorFirstName,
+                authorLastName
         );
-        return "New post created";
+        return "New post created  ";
     }
 
-   /* @GetMapping
-    public String createNewPostAuthor(
-            @RequestParam("author_firstName") String author_firstName,
-            @RequestParam("author_lastName") String author_lastName)
-    {
-        log.info(
-                "Request received. Title={}, body={}, date={}, author_firstName={}, author_lastName",
-
-                author_lastName,
-                author_lastName
-        );
-        return "New postAuthor created";
-    }*/
 }
