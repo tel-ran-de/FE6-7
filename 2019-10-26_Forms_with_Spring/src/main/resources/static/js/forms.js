@@ -43,7 +43,7 @@ const createIsNotMoreThanValidator = function(maxLength) {
     };
 };
 
-// for bottom
+// for bottom disable/enable
 
 let isFormValid = function(form) {
     for (let key of Object.keys(form.inputs)) {
@@ -58,13 +58,11 @@ const disableFormButton = function(form) {
      $('form#'+ form.id +" [type='submit']").attr('disabled', true);
 };
 
-// otkuda vzialsa atribut Disabled , iz bootstrap ili .. ?
-
 const enableFormButton = function(form) {
     $('form#'+ form.id +" [type='submit']").attr('disabled', false);
 };
 
-// for bottom end
+// for function reset+submit bottom
 
 const markAllInputInvalid = function (form) {
     Object.keys(form.inputs).forEach (key => {
@@ -80,11 +78,10 @@ $('form#'+ form.id +" [type='reset']").on("click", () =>{
     $('form#'+ form.id +" [type='submit']").attr('disabled', true);
     markAllInputInvalid (form);
     });
-
 };
 
+// the main function
 
-// nawa osnovnaiia function
 let validateForm = function(form) {
 
     // Подумайте, можем ли мы реорганизовать функцию validateForm,
@@ -92,9 +89,8 @@ let validateForm = function(form) {
     //Think if we can refactor validateForm function to get rid of calls of functions
     // where we send form as a parameter.
 
-
         Object.keys(form.inputs).forEach(key => {
-            const $input = $('form#'+ form.id +' [name=' + key + ']'); /// probel - vawno
+            const $input = $('form#'+ form.id +' [name=' + key + ']');  /// probel - very important
             const validators = form.inputs[key];
             $input.on({
                 focus: function(){
@@ -115,16 +111,5 @@ let validateForm = function(form) {
                     }
                 }
             });
-
-            //$('form#'+ form.id).mouseenter(function(){
-              //  if (isFormValid(form)) {
-                //    enableFormButton(form);
-               // }
-        //});
-
-
-
-
     });
-
 };

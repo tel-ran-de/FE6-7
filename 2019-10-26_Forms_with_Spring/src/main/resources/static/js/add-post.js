@@ -21,9 +21,9 @@ $(function() {
     resetSubmit(addPostForm);
 
 
-    $('input, textarea').on('blur', ()=> {
+    /*$('input, textarea').on('blur', ()=> {
         console.log(isFormValid(addPostForm))
-    })
+    })*/
 
 });
 
