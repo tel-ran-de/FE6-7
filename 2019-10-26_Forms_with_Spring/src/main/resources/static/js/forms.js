@@ -75,10 +75,14 @@ let validateForm = function(form) {
                     let error = validator($input);
                     if (!error.valid) {
                         markInputInvalid($input, error.errorMessage);
+                        disableFormButton(form);
                         return;
                     }
                 }
                 markInputValid($input);
+                if (isFormValid(form)) {
+                    enableFormButton(form);
+                }
             }
         });
     });
