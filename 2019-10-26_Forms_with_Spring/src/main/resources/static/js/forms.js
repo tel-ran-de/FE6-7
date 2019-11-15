@@ -52,12 +52,31 @@ let isFormValid = function(form) {
     return true;
 };
 
+const resetSubmit = function(form) {
+    $('form#'+ form.id +" [type='reset']").on("click", () =>{
+        $('form#'+ form.id +" [type='submit']").attr('disabled', true);
+        markAllInputPristine (form);
+    });
+};
+
+const markAllInputPristine = function (form) {
+    Object.keys(form.inputs).forEach (key => {
+        const $input = $('form#'+ form.id +' [name=' + key + ']');
+        $input.removeClass('is-invalid');
+        $input.removeClass('is-valid');
+        /*$input.addClass('is-invalid');
+        $input.removeClass('is-valid');
+        $input.siblings('.invalid-feedback').html('This field is required');*/
+    });
+};
+
+
 const disableFormButton = function(form) {
-    $('form#'+ form.id +' button').attr('disabled', true);
+    $('form#'+ form.id +" [type='submit']").attr('disabled', true);
 };
 
 const enableFormButton = function(form) {
-    $('form#'+ form.id +' button').attr('disabled', false);
+    $('form#'+ form.id +" [type='submit']").attr('disabled', false);
 };
 
 let validateForm = function(form) {
