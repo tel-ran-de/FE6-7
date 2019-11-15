@@ -2,8 +2,9 @@ $(function() {
     const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
     const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
 
+    const formId = 'addNewPostForm';
     const addPostForm = {
-        id: 'addNewPostForm',
+        id: formId,
         inputs: {
             title: [isEmptyValidator, isNotMoreThan50Validator],
             postBody: [isEmptyValidator, isNotMoreThan4096Validator]
@@ -12,9 +13,28 @@ $(function() {
 
     validateForm(addPostForm);
 
-    $('input, textarea').on('blur', ()=> {
-        console.log(isFormValid(addPostForm))
-    })
+    $('form#'+ formId + ' button[type=submit]').on('click',
+        function(event) {
+        event.preventDefault();
+        console.log(event);
+        const formData = $('form#' + formId).serialize();
+        console.log(formData);
+
+        $.ajax({
+            url: '/post',
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                console.log(response);
+                $('form div.alert-success').html(response);
+                $('form div.alert-success').show();
+            },
+            error: function(error) {
+                $('form div.alert-danger').html(error.responseText);
+                $('form div.alert-danger').show();
+            }
+        });
+    });
 
 });
 
