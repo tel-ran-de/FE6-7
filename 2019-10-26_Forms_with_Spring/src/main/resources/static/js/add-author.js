@@ -2,6 +2,8 @@ $(function() {
     const isNotMoreThan25Validator = createIsNotMoreThanValidator(25);
     const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
 
+
+    const formId = 'addNewAuthorForm';
     const addAuthorForm = {
         id: 'addNewAuthorForm',
         inputs: {
@@ -11,4 +13,24 @@ $(function() {
     };
 
     validateForm(addAuthorForm);
+
+    $('form#'+ formId + ' button[type=submit]').on('click',
+        function(event) {
+            event.preventDefault();
+            const formData = $('form#' + formId).serialize();
+
+            $.ajax({
+                url: '/author',
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    $('form div.alert-success').html(response);
+                    $('form div.alert-success').show();
+                },
+                error: function(error) {
+                    $('form div.alert-danger').html(error.responseText);
+                    $('form div.alert-danger').show();
+                }
+            });
+        });
 });
