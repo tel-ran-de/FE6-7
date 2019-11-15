@@ -3,6 +3,7 @@ $(function() {
     const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
 
     const formId = 'addNewPostForm';
+
     const addPostForm = {
         id: formId,
         inputs: {
