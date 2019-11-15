@@ -7,7 +7,8 @@ $(function() {
         id: formId,
         inputs: {
             title: [isEmptyValidator, isNotMoreThan50Validator],
-            postBody: [isEmptyValidator, isNotMoreThan4096Validator]
+            postBody: [isEmptyValidator, isNotMoreThan4096Validator],
+            author: [isEmptyValidator, isNotMoreThan50Validator]
         }
     };
 
@@ -16,16 +17,13 @@ $(function() {
     $('form#'+ formId + ' button[type=submit]').on('click',
         function(event) {
         event.preventDefault();
-        console.log(event);
         const formData = $('form#' + formId).serialize();
-        console.log(formData);
 
         $.ajax({
             url: '/post',
             type: 'POST',
             data: formData,
             success: function(response) {
-                console.log(response);
                 $('form div.alert-success').html(response);
                 $('form div.alert-success').show();
             },
