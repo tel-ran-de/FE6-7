@@ -1,4 +1,5 @@
 $(function() {
+    const isNotMoreThan25Validator = createIsNotMoreThanValidator(25);
     const isNotMoreThan50Validator = createIsNotMoreThanValidator(50);
     const isNotMoreThan4096Validator = createIsNotMoreThanValidator(4096);
 
@@ -7,7 +8,9 @@ $(function() {
         id: formId,
         inputs: {
             title: [isEmptyValidator, isNotMoreThan50Validator],
-            postBody: [isEmptyValidator, isNotMoreThan4096Validator]
+            postBody: [isEmptyValidator, isNotMoreThan4096Validator],
+            firstName: [isEmptyValidator, isNotMoreThan25Validator],
+            lastName: [isEmptyValidator, isNotMoreThan50Validator]
         }
     };
 
