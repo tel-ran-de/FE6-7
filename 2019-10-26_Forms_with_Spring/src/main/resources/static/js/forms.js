@@ -87,3 +87,11 @@ let validateForm = function(form) {
         });
     });
 };
+
+const convertToJson = function(array = []) {
+    let obj = {};
+    array.forEach(function(element) {
+        obj[element.name] = element.value;
+    });
+    return obj;
+};
