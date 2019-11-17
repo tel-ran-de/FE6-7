@@ -21,6 +21,7 @@ $(function() {
             console.log(formData);
             const formDataJson = convertToJson(formData);
             console.log(formDataJson);
+
             $.ajax({
                 url: '/author',
                 type: 'POST',
