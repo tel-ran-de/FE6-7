@@ -95,3 +95,30 @@ const convertToJson = function(array = []) {
     });
     return obj;
 };
+
+let requestJsonData = function(form) {
+    $('form#'+ form.id + ' button[type=submit]').on('click',
+        function(event) {
+            event.preventDefault();
+            console.log(event);
+            const formData = $('form#' + form.id).serializeArray(); // собирает данные из полей и складывает их в таблицу
+            console.log(formData);
+            const formDataJson = convertToJson(formData); // обр. к функции из -forms, конв. данные таблицы в Json
+            console.log(formDataJson);
+            $.ajax({                            // посылает данные на BE
+                url: '/author',
+                type: 'POST',
+                data: JSON.stringify(formDataJson),
+                contentType: "application/json",
+                success: function(response) {
+                    console.log(response);
+                    $('form div.alert-success').html(response);
+                    $('form div.alert-success').show();
+                },
+                error: function(error) {
+                    $('form div.alert-danger').html(error.responseText);
+                    $('form div.alert-danger').show();
+                }
+            });
+        });
+}
