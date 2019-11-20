@@ -1,5 +1,6 @@
 package de.telran.form.entity;
 
+import de.telran.form.dto.AuthorDto;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,4 +17,5 @@ public class PostEntity {
     private Date date;
     @ManyToOne(targetEntity = AuthorEntity.class)
     private AuthorEntity authorEntity;
+
 }
