@@ -1,4 +1,4 @@
-package de.telran.form;
+package de.telran.form.controller;
 
 import de.telran.form.dto.AuthorDto;
 import de.telran.form.service.AuthorService;
