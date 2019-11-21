@@ -17,13 +17,15 @@ $(function() {
         function(event) {
         event.preventDefault();
         console.log(event);
-        const formData = $('form#' + formId).serialize();
+        const formData = $('form#' + formId).serializeArray();
         console.log(formData);
+        const formDataJson = convertToJson(formData);
 
         $.ajax({
             url: '/post',
             type: 'POST',
-            data: formData,
+            data: JSON.stringify(formDataJson),
+            contentType: "application/json",
             success: function(response) {
                 console.log(response);
                 $('form div.alert-success').html(response);
@@ -37,4 +39,5 @@ $(function() {
     });
 
 });
+
 
