@@ -5,6 +5,8 @@ import de.telran.form.service.AuthorService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/author")
 @Slf4j
@@ -24,5 +26,10 @@ public class AuthorController {
                 author.getLastName()
         );
         return authorService.createAuthor(author);
+    }
+
+    @GetMapping
+    public List<AuthorDto> getAllAuthors() {
+        return authorService.getAllAuthors();
     }
 }
