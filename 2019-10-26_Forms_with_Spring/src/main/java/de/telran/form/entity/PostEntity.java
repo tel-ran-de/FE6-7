@@ -1,10 +1,12 @@
 package de.telran.form.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Builder
 @Data
 @Entity
 public class PostEntity {

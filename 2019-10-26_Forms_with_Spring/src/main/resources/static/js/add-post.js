@@ -7,7 +7,7 @@ $(function() {
         id: formId,
         inputs: {
             title: [isEmptyValidator, isNotMoreThan50Validator],
-            postBody: [isEmptyValidator, isNotMoreThan4096Validator]
+            body: [isEmptyValidator, isNotMoreThan4096Validator]
         }
     };
 
@@ -17,13 +17,14 @@ $(function() {
         function(event) {
         event.preventDefault();
         console.log(event);
-        const formData = $('form#' + formId).serialize();
+        const formData = $('form#' + formId).serializeArray();
         console.log(formData);
 
         $.ajax({
             url: '/post',
             type: 'POST',
-            data: formData,
+            contentType: "application/json",
+            data: JSON.stringify(convertToJson(formData)),
             success: function(response) {
                 console.log(response);
                 $('form div.alert-success').html(response);
@@ -35,6 +36,21 @@ $(function() {
             }
         });
     });
+
+    $.ajax({
+        url: '/author',
+        type: 'GET',
+        success: function(response) {
+            let code = '';
+            for(let val of response) {
+                code=code+'<option value=' + val.id + '>' + val.firstName + ' ' + val.lastName + '</option>';
+            }
+            $('form#addNewPostForm select[name=authorId]').html(code);
+        },
+        error: function(error) {
+            console.log(error);
+        }})
+
 
 });
 
