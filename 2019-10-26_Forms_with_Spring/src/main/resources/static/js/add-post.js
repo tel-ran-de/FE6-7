@@ -41,12 +41,16 @@ $(function() {
         url: '/author',
         type: 'GET',
         success: function(response) {
-            console.log(response);
+            let code = '';
+            for(let val of response) {
+                code=code+'<option value=' + val.id + '>' + val.firstName + ' ' + val.lastName + '</option>';
+            }
+            $('form#addNewPostForm select[name=authorId]').html(code);
         },
         error: function(error) {
             console.log(error);
-        }
-    });
+        }})
+
 
 });
 
