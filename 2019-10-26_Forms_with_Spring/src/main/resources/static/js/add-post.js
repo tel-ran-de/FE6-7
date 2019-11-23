@@ -44,7 +44,7 @@ $(function() {
         success: function(response) {
             let code = '';
             for(let val of response) {
-                    code=code+'<option selected value=' + val.id + '>' + val.firstName + ' ' + val.lastName + '</option>';
+                    code=code+'<option value=' + val.id + '>' + val.firstName + ' ' + val.lastName + '</option>';
             }
             $('form#addNewPostForm select[name=authorId]').html(code);
             },
