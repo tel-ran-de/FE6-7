@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-blog';
+  superPuperTitle = 'My super puper blog';
+  newDivContents = 'Something to be added to div';
 }
