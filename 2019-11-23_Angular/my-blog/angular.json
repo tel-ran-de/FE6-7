@@ -91,7 +91,10 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/img"
+              "src/assets/img",
+              "src/assets/js",
+              "src/assets/vendor",
+              "src/assets/scss"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -104,6 +107,7 @@
               "my-blog/node_modules/karma-jasmine/node_modules/bootstrap/dist/js/bootstrap.bundle.js",
               "my-blog/node_modules/karma-jasmine/node_modules/bootstrap/dist/js/bootstrap.js",
               "my-blog/node_modules/karma-jasmine/node_modules/jquery/dist/jquery.js"
+
             ]
           }
         },
