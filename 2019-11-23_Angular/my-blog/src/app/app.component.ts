@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   superPuperTitle = 'My super puper blog';
+  newDivContents = 'Something to be added to div';
 }
