@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MainComponent } from './main/main.component';
 import { PostPreviewComponent } from './post-preview/post-preview.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PostPreviewComponent } from './post-preview/post-preview.component';
     FooterComponent,
     NavigationComponent,
     MainComponent,
-    PostPreviewComponent
+    PostPreviewComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
