@@ -1,0 +1,29 @@
+@import '../../scss/clean-blog';
+
+#mainNav {
+  position: absolute;
+  border-bottom: 1px solid $gray-200;
+  background-color: white;
+  @include sans-serif-font;
+  .navbar-brand {
+    font-weight: 800;
+    color: $gray-800;
+  }
+  .navbar-toggler {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 13px;
+    text-transform: uppercase;
+    color: $gray-800;
+  }
+  .navbar-nav {
+    > li.nav-item {
+      > a {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
