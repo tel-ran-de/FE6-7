@@ -16,16 +16,7 @@
     text-transform: uppercase;
     color: $gray-800;
   }
-  .navbar-nav {
-    > li.nav-item {
-      > a {
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-    }
-  }
+
   @media only screen and (min-width: 992px) {
     border-bottom: 1px solid transparent;
     background: transparent;
@@ -37,19 +28,8 @@
         color: fade-out($white, .2);
       }
     }
-    .navbar-nav {
-      > li.nav-item {
-        > a {
-          padding: 10px 20px;
-          color: $white;
-          &:focus,
-          &:hover {
-            color: fade-out($white, .2);
-          }
-        }
-      }
-    }
   }
+
   @media only screen and (min-width: 992px) {
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
