@@ -10,6 +10,7 @@ import { MainComponent } from './component/main/main.component';
 import { PostPreviewComponent } from './component/post-preview/post-preview.component';
 import { NavigationItemComponent } from './component/navigation-item/navigation-item.component';
 import { AboutComponent } from './component/about/about.component';
+import { ContactComponent } from './component/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AboutComponent } from './component/about/about.component';
     MainComponent,
     PostPreviewComponent,
     NavigationItemComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
