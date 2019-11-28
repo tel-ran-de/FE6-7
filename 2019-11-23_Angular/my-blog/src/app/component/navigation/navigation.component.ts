@@ -25,7 +25,7 @@ export class NavigationComponent implements OnInit {
     },
     {
       text: 'Contact',
-      link: ''
+      link: 'contact'
     }
   ];
 
