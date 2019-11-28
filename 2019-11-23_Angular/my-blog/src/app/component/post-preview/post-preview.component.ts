@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PostDto} from '../dto/PostDto';
+import {PostDto} from '../../dto/PostDto';
 
 @Component({
   selector: 'app-post-preview',
