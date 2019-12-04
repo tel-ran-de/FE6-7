@@ -1,0 +1,23 @@
+@import '../../../scss/clean-blog';
+
+li.nav-item {
+  > a {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  li.nav-item {
+    > a {
+      padding: 10px 20px;
+      color: $white;
+      &:focus,
+      &:hover {
+        color: fade-out($white, .2);
+      }
+    }
+  }
+}
