@@ -13,7 +13,7 @@ export class NavigationComponent implements OnInit {
   navigationData: NavigationItemDto[] = [
     {
       text: 'Home',
-      link: ''
+      link: 'home'
     },
     {
       text: 'About',
@@ -21,11 +21,11 @@ export class NavigationComponent implements OnInit {
     },
     {
       text: 'Sample post',
-      link: ''
+      link: 'post'
     },
     {
       text: 'Contact',
-      link: ''
+      link: 'contact'
     }
   ];
 
