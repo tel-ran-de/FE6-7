@@ -10,9 +10,7 @@ export class PostPreviewComponent implements OnInit {
 
   @Input()
   post: PostDto;
-
   constructor() { }
-
   ngOnInit() {
   }
 
