@@ -8,12 +8,21 @@ import {PostDto} from '../../dto/PostDto';
 })
 export class PostPreviewComponent implements OnInit {
 
+  maxLength = 50;
+
   @Input()
   post: PostDto;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  shortenString(str: string): string {
+    if (str.length < this.maxLength) {
+      return str;
+    }
+    return str.slice(0, this.maxLength) + '...';
   }
 
 }
