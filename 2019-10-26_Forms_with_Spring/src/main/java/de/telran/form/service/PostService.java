@@ -6,6 +6,9 @@ import de.telran.form.repository.AuthorRepository;
 import de.telran.form.repository.PostRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class PostService {
 
@@ -18,12 +21,27 @@ public class PostService {
     }
 
     public Long createPost(PostDto postDto) {
-        PostEntity postEntity = PostEntity.builder()
-                .title(postDto.getTitle())
-                .body(postDto.getBody())
-                .date(postDto.getDate())
-                .authorEntity(authorRepository.getOne(postDto.getAuthorId()))
-                .build();
+        PostEntity postEntity = new PostEntity();
+        postEntity.setTitle(postDto.getTitle());
+        postEntity.setBody(postDto.getBody());
+        postEntity.setDate(postDto.getDate());
+        postEntity.setAuthorEntity(authorRepository.getOne(postDto.getAuthorId()));
         return postRepository.save(postEntity).getId();
+    }
+
+    public List<PostDto> getAllPosts() {
+        return postRepository.findAll()
+                .stream()
+                .map(postEntity ->
+                        {
+                            PostDto postDto = new PostDto();
+                            postDto.setBody(postEntity.getBody());
+                            postDto.setId(postEntity.getId());
+                            postDto.setTitle(postEntity.getTitle());
+                            postDto.setDate(postEntity.getDate());
+                            return postDto;
+                        }
+                )
+                .collect(Collectors.toList());
     }
 }

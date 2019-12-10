@@ -5,6 +5,8 @@ import de.telran.form.service.PostService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/post")
 @Slf4j
@@ -20,5 +22,9 @@ public class PostController {
     public Long createNewPost(@RequestBody PostDto postDto) {
         log.info("Request received. posdtDto={}", postDto);
         return postService.createPost(postDto);
+    }
+    @GetMapping
+    public List<PostDto> getAllPosts() {
+        return postService.getAllPosts();
     }
 }
