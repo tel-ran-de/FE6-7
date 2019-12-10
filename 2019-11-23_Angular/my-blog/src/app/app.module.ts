@@ -10,6 +10,12 @@ import { MainComponent } from './component/main/main.component';
 import { PostPreviewComponent } from './component/post-preview/post-preview.component';
 import { NavigationItemComponent } from './component/navigation-item/navigation-item.component';
 import { AboutComponent } from './component/about/about.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { Post1Component } from './component/post1/post1.component';
+import { Post2Component } from './component/post2/post2.component';
+import { Post3Component } from './component/post3/post3.component';
+import { Post4Component } from './component/post4/post4.component';
+import { PostComponent } from './component/post/post.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import { AboutComponent } from './component/about/about.component';
     MainComponent,
     PostPreviewComponent,
     NavigationItemComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent,
+    Post1Component,
+    Post2Component,
+    Post3Component,
+    Post4Component,
+    PostComponent
   ],
   imports: [
     BrowserModule,

@@ -21,11 +21,11 @@ export class NavigationComponent implements OnInit {
     },
     {
       text: 'Sample post',
-      link: ''
+      link: 'post'
     },
     {
       text: 'Contact',
-      link: ''
+      link: 'contact'
     }
   ];
 
