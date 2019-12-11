@@ -26,6 +26,10 @@ export class NavigationComponent implements OnInit {
     {
       text: 'Contact',
       link: ''
+    },
+    {
+      text:'new post',
+      link:'create-post'
     }
   ];
 
