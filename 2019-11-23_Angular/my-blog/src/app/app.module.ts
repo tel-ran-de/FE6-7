@@ -12,6 +12,8 @@ import { NavigationItemComponent } from './component/navigation-item/navigation-
 import { AboutComponent } from './component/about/about.component';
 import { PostComponent } from './component/post/post.component';
 import {CreatePostComponent} from './component/create-post/create-post.component';
+import {Placeholder} from '@angular/compiler/src/i18n/i18n_ast';
+import {PlaceholderComponent} from './component/placeholder/placeholder.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {CreatePostComponent} from './component/create-post/create-post.component
     NavigationItemComponent,
     AboutComponent,
     PostComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    PlaceholderComponent
   ],
   imports: [
     BrowserModule,
