@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body class="container">
+<form id="addNewPostForm">
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" name="title" type="text">
+    <small id="titleHelp" class="form-text text-muted">Please type here the title of your post.</small>
+  </div>
+  <div class="form-group">
+    <label>Text of the post</label>
+    <textarea class="form-control" name="body" rows="3"></textarea>
+    <small id="postHelp" class="form-text text-muted">Text of your post</small>
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input class="form-control" name="date" type="date">
+    <small id="dateHelp" class="form-text text-muted">Please select date when to publish</small>
+  </div>
+  <div class="form-group">
+    <label>Author</label>
+    <input class="form-control" name="authorId" type="text">
+    <small id="authorHelp" class="form-text text-muted">Please type the author of the post</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
