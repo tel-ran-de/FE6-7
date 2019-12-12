@@ -20,6 +20,10 @@ export class NavigationComponent implements OnInit {
       link: 'about'
     },
     {
+    text: 'Create-post',
+    link: 'create-post'
+},
+    {
       text: 'Sample post',
       link: ''
     },
