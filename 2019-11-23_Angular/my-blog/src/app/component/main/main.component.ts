@@ -13,7 +13,11 @@ export class MainComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.posts = this.postService.getAllPosts();
+    this.postService.getAllPosts().subscribe(
+      posts => {
+        this.posts = posts;
+      }
+    );
   }
 
 }

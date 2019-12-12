@@ -11,6 +11,7 @@ import { PostPreviewComponent } from './component/post-preview/post-preview.comp
 import { NavigationItemComponent } from './component/navigation-item/navigation-item.component';
 import { AboutComponent } from './component/about/about.component';
 import { PostComponent } from './component/post/post.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PostComponent } from './component/post/post.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
