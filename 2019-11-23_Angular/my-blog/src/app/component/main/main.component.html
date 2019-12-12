@@ -5,6 +5,9 @@
       <div *ngFor="let post of posts">
         <app-post-preview [post]="post" ></app-post-preview>
       </div>
+      <div class="post-preview">
+        <a routerLink='/post-placeholder' class="post-title">Create post</a>
+      </div>
       <!-- Pager -->
       <div class="clearfix">
         <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
