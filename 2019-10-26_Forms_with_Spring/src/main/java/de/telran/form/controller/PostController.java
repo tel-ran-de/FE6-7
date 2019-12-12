@@ -23,8 +23,14 @@ public class PostController {
         log.info("Request received. posdtDto={}", postDto);
         return postService.createPost(postDto);
     }
+
     @GetMapping
     public List<PostDto> getAllPosts() {
         return postService.getAllPosts();
+    }
+
+    @GetMapping("/{id}")
+    public PostDto getPost(@PathVariable Long id) {
+        return postService.getPost(id);
     }
 }

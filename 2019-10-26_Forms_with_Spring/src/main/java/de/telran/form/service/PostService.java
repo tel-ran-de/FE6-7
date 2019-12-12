@@ -32,16 +32,14 @@ public class PostService {
     public List<PostDto> getAllPosts() {
         return postRepository.findAll()
                 .stream()
-                .map(postEntity ->
-                        {
-                            PostDto postDto = new PostDto();
-                            postDto.setBody(postEntity.getBody());
-                            postDto.setId(postEntity.getId());
-                            postDto.setTitle(postEntity.getTitle());
-                            postDto.setDate(postEntity.getDate());
-                            return postDto;
-                        }
-                )
+                .map(PostDto::new)
                 .collect(Collectors.toList());
+    }
+
+    public PostDto getPost(Long id) {
+        return new PostDto(postRepository.findById(id)
+                .orElseThrow(
+                        () -> new RuntimeException("Post with id=" + id + "not found")
+                ));
     }
 }
