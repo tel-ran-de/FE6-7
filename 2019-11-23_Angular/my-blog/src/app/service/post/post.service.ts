@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class PostService {
 
-  private URL_POST = '/post';
+  private URL_POST = '/api/post';
 
   constructor(private http: HttpClient) { }
 

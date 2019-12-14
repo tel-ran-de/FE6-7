@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PostService} from '../../service/post/post.service';
 import {PostDto} from '../../dto/PostDto';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-post',
