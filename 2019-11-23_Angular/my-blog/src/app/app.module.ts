@@ -12,6 +12,8 @@ import { NavigationItemComponent } from './component/navigation-item/navigation-
 import { AboutComponent } from './component/about/about.component';
 import { PostComponent } from './component/post/post.component';
 import {HttpClientModule} from '@angular/common/http';
+import { EditPostComponent } from './component/edit-post/edit-post.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import {HttpClientModule} from '@angular/common/http';
     PostPreviewComponent,
     NavigationItemComponent,
     AboutComponent,
-    PostComponent
+    PostComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

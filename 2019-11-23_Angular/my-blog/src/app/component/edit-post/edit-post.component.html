@@ -1,0 +1,17 @@
+<form [formGroup]="postForm">
+  <input type="hidden" formControlName="id">
+  <div class="form-group" >
+    <label>Title</label>
+    <input type="text" class="form-control" formControlName="title" >
+  </div>
+  <div class="form-group">
+  <label>Body</label>
+    <textarea class="form-control" formControlName="body"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input type="date" formControlName="date">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>
+</form>
+<div>{{postForm.getRawValue() | json }}</div>
