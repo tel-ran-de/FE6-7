@@ -1,0 +1,22 @@
+<form [formGroup]="authorForm">
+  <input type="hidden" formControlName="id">
+  <div class="form-group" >
+    <label>First name</label>
+    <small id="firstNameHelp" class="form-text text-muted">Please type here the first name of your post</small>
+    <input type="text" class="form-control" formControlName="firstName" >
+  </div>
+
+  <div class="form-group" >
+    <label>Last name</label>
+    <small id="lastNameHelp" class="form-text text-muted">Please type here the last name of your post</small>
+    <input type="text" class="form-control" formControlName="lastName" >
+  </div>
+
+  <div class="form-group">
+    <label>Date</label>
+    <small id="dateHelp" class="form-text text-muted">Please select date when to publish</small>
+    <input type="date" formControlName="date">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>
+</form>
+<div>{{authorForm.getRawValue() | json }}</div>
