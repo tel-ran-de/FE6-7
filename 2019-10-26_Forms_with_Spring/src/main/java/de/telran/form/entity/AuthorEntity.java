@@ -2,10 +2,8 @@ package de.telran.form.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.sql.Date;
 
 @Data
 @Entity
@@ -15,4 +13,8 @@ public class AuthorEntity {
     private Long id;
     private String firstName;
     private String lastName;
+    private Date date;
+
+    @ManyToOne(targetEntity = AuthorEntity.class)
+    private AuthorEntity authorEntity;
 }
