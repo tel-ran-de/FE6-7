@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {PostService} from '../../service/post/post.service';
+import {AuthorService} from '../../service/author/author.service';
 
 @Component({
   selector: 'app-edit-author',
@@ -12,7 +13,7 @@ export class EditAuthorComponent implements OnInit {
   authorForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private postService: PostService ) {}
+              private authorService: AuthorService ) {}
 
   ngOnInit() {
     this.authorForm = this.fb.group({
@@ -25,7 +26,7 @@ export class EditAuthorComponent implements OnInit {
 
   onSubmit($event: MouseEvent) {
     console.log(this.authorForm.getRawValue());
-    this.postService.saveAuthor(this.authorForm.getRawValue())
+    this.authorService.saveAuthor(this.authorForm.getRawValue())
       .subscribe(
         result => console.log(result)
       );
