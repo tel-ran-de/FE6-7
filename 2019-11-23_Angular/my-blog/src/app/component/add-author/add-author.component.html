@@ -1,0 +1,17 @@
+<form [formGroup]="authorForm">
+  <input type="hidden" formControlName="id">
+  <div class="form-group" >
+    <label>First name</label>
+    <input type="text" class="form-control" formControlName="firstName">
+  </div>
+  <div class="form-group">
+    <label>Last name</label>
+    <input type="text" class="form-control" formControlName="lastName">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="form-control" formControlName="email">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>
+</form>
+<div>{{authorForm.getRawValue() | json }}</div>
