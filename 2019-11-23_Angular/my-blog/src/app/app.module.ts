@@ -14,6 +14,7 @@ import { PostComponent } from './component/post/post.component';
 import {HttpClientModule} from '@angular/common/http';
 import { EditPostComponent } from './component/edit-post/edit-post.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { AddAuthorComponent } from './component/add-author/add-author.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     NavigationItemComponent,
     AboutComponent,
     PostComponent,
-    EditPostComponent
+    EditPostComponent,
+    AddAuthorComponent,
   ],
   imports: [
     BrowserModule,
