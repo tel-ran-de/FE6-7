@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { PostDto } from '../../dto/PostDto';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {AuthorDto} from '../../dto/AuthorDto';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,6 @@ import {Observable} from 'rxjs';
 export class PostService {
 
   private URL_POST = '/api/post';
-
   constructor(private http: HttpClient) { }
 
   getPost(id: number): Observable<PostDto> {
