@@ -1,0 +1,7 @@
+<div *ngIf="!control.valid && (control.dirty || control.touched)">
+  <div *ngFor="let option of translations">
+    <div *ngIf="control.errors[option.errorName]" class="alert alert-danger">
+      {{option.errorText}}
+    </div>
+  </div>
+</div>
