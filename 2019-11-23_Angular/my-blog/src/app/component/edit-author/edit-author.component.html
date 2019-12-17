@@ -3,6 +3,15 @@
   <div class="form-group" >
     <label>First name</label>
     <input type="text" class="form-control" formControlName="firstName" >
+    <div *ngIf="!authorForm.controls['firstName'].valid && (authorForm.controls['firstName'].dirty || authorForm.controls['firstName'].touched)"
+         class="alert alert-danger">
+      <div *ngIf="authorForm.controls['firstName'].errors['required']">
+        This field is required
+      </div>
+      <div *ngIf="authorForm.controls['firstName'].errors['minlength']">
+        Minimum length must be {{authorForm.controls['firstName'].errors['minlength']['requiredLength']}}
+      </div>
+    </div>
   </div>
   <div class="form-group" >
     <label>Last name</label>
@@ -11,3 +20,10 @@
   <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>
 </form>
 <div>{{authorForm.getRawValue() | json }}</div>
+<div>Dirty:{{authorForm.controls['firstName'].dirty}}</div>
+<div>Pristine: {{authorForm.controls['firstName'].pristine}}</div>
+<div>Touched: {{authorForm.controls['firstName'].touched}}</div>
+<div>Valid: {{authorForm.controls['firstName'].valid}}</div>
+<div>Validation errors: {{authorForm.controls['firstName'].errors | json}}</div>
+<div>{{authorForm.controls['lastName'].value}}</div>
+
