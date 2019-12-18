@@ -16,6 +16,7 @@ import { EditPostComponent } from './component/edit-post/edit-post.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { EditAuthorComponent } from './component/edit-author/edit-author.component';
 import { ValidationErrorComponent } from './component/validation-error/validation-error.component';
+import {BsDatepickerModule, DatepickerModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { ValidationErrorComponent } from './component/validation-error/validatio
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDatepickerModule,
+    DatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

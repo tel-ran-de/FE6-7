@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
+import {TranslationsDto} from '../../dto/TranslationsDto';
 
 @Component({
   selector: 'app-validation-error',
@@ -8,16 +9,10 @@ import {AbstractControl} from '@angular/forms';
 })
 export class ValidationErrorComponent implements OnInit {
 
-  translations = [
-    {
-    errorName: 'required',
-      errorText: 'This field is required'
-  },
-    {
-      errorName: 'minlength',
-      errorText: 'This field has min length'
-    }
-  ];
+  translations: TranslationsDto = {
+    minlength: 'This field must be 3 symbols or more',
+    required: 'This field is required'
+  };
   @Input()
   control: AbstractControl;
 
