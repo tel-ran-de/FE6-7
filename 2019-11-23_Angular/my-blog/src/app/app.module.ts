@@ -15,6 +15,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { EditPostComponent } from './component/edit-post/edit-post.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { EditAuthorComponent } from './component/edit-author/edit-author.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatePickerComponent } from './component/date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,16 @@ import { EditAuthorComponent } from './component/edit-author/edit-author.compone
     AboutComponent,
     PostComponent,
     EditPostComponent,
-    EditAuthorComponent
+    EditAuthorComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
