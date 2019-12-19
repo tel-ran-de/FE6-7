@@ -15,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { EditPostComponent } from './component/edit-post/edit-post.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { EditAuthorComponent } from './component/edit-author/edit-author.component';
+import { ValidationErrorsComponent } from './component/validation-errors/validation-errors.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditAuthorComponent } from './component/edit-author/edit-author.compone
     AboutComponent,
     PostComponent,
     EditPostComponent,
-    EditAuthorComponent
+    EditAuthorComponent,
+    ValidationErrorsComponent
   ],
   imports: [
     BrowserModule,

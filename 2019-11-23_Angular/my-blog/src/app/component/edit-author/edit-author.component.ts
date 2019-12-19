@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthorService} from '../../service/author/author.service';
 
 @Component({
@@ -21,6 +21,7 @@ export class EditAuthorComponent implements OnInit {
         lastName: ['']
       }
     );
+
     console.log(this.authorForm);
   }
 
@@ -30,5 +31,16 @@ export class EditAuthorComponent implements OnInit {
       .subscribe(
         result => console.log(result)
       );
+  }
+
+  getControl(name): AbstractControl {
+    return this.authorForm.controls[name];
+  }
+
+  errorTranslations(): any {
+    return  {
+      required: 'This field is required',
+      minLength: 'Min length for this field is {{requiredLength}}'
+    };
   }
 }
