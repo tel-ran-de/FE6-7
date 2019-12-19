@@ -3,15 +3,7 @@
   <div class="form-group" >
     <label>First name</label>
     <input type="text" class="form-control" formControlName="firstName" >
-    <div *ngIf="!authorForm.controls['firstName'].valid && (authorForm.controls['firstName'].dirty || authorForm.controls['firstName'].touched)"
-         class="alert alert-danger">
-      <div *ngIf="authorForm.controls['firstName'].errors['required']">
-        This field is required
-      </div>
-      <div *ngIf="authorForm.controls['firstName'].errors['minlength']">
-        Minimum length must be {{authorForm.controls['firstName'].errors['minlength']['requiredLength']}}
-      </div>
-    </div>
+    <app-validation-error [control]="authorForm.controls['firstName']"></app-validation-error>
   </div>
   <div class="form-group" >
     <label>Last name</label>
