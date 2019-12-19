@@ -21,11 +21,23 @@ export class ValidationErrorsComponent implements OnInit {
   errors(): any[] {
     const errors = [];
     for (const errorName of Object.keys(this.control.errors)) {
-        errors.push({
-          name: errorName,
-          value: this.control.errors[errorName]
-        });
+      let errorTranslation = this.translations[errorName];
+      const placeholder = this.getPlaceholder(this.translations[errorName]);
+      errorTranslation = errorTranslation.replace(
+        '{{' + placeholder + '}}', this.control.errors[errorName][placeholder]
+        );
+      errors.push({
+        name: errorName,
+        value: errorTranslation
+      });
     }
     return errors;
+  }
+
+  getPlaceholder(str: string) {
+    return str.substring(
+      str.lastIndexOf('{{') + 2,
+      str.lastIndexOf('}}')
+    );
   }
 }

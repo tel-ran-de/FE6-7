@@ -5,7 +5,7 @@
     <input type="text" class="form-control" formControlName="firstName">
     <app-validation-errors
       [control]="getControl('firstName')"
-      [translations]="errorTranslations"
+      [translations]="getErrorTranslations()"
     >
     </app-validation-errors>
   </div>

@@ -17,7 +17,11 @@ export class EditAuthorComponent implements OnInit {
   ngOnInit() {
     this.authorForm = this.fb.group({
         id: [],
-        firstName: ['', [Validators.required, Validators.minLength(3)]],
+        firstName: ['', [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(10)
+        ]],
         lastName: ['']
       }
     );
@@ -37,10 +41,11 @@ export class EditAuthorComponent implements OnInit {
     return this.authorForm.controls[name];
   }
 
-  errorTranslations(): any {
+  getErrorTranslations(): any {
     return  {
       required: 'This field is required',
-      minLength: 'Min length for this field is {{requiredLength}}'
+      minlength: 'Min length for this field is {{requiredLength}}'
     };
   }
+
 }
