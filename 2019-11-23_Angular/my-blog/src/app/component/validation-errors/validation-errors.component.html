@@ -1,0 +1,23 @@
+<!--
+<div *ngIf="!authorForm.controls['firstName'].valid && (authorForm.controls['firstName'].dirty || authorForm.controls['firstName'].touched)"
+     class="alert alert-danger">
+  <div *ngIf="authorForm.controls['firstName'].errors['required']">
+    This field is required
+  </div>
+  <div *ngIf="authorForm.controls['firstName'].errors['minlength']">
+    Minimum length must be {{authorForm.controls['firstName'].errors['minlength']['requiredLength']}}
+  </div>
+</div>
+-->
+
+<div *ngIf="!control.valid && (control.dirty || control.touched)"
+     class="alert alert-danger">
+  <div *ngIf="control.errors['required']" class="alert alert-danger">
+    {{translations.required}}
+  </div>
+  <div *ngIf="control.errors['minlength']" class="alert alert-danger">
+    {{translations.minLength + control.errors['minlength']['requiredLength']}}
+  </div>
+</div>
+
+
