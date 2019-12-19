@@ -40,7 +40,7 @@ export class EditAuthorComponent implements OnInit {
   errorTranslations(): any {
     return  {
       required: 'This field is required',
-      minLength: 'Min length for this field is {{requiredLength}}'
+      minlength: 'Min length for this field is {{requiredLength}}'
     };
   }
 }
