@@ -41,11 +41,15 @@ export class EditAuthorComponent implements OnInit {
     return this.authorForm.controls[name];
   }
 
+  /*
+   {maxlength: {requiredLength: 5, actualLength: 7}}
+   */
+
   getErrorTranslations(): any {
     return  {
       required: 'This field is required',
-      minlength: 'Min length for this field is {{requiredLength}}'
+      minlength: 'Min length for this field is {{requiredLength}}',
+      maxlength: 'Max length for this fields is {{requiredLength}}'
     };
   }
-
 }
