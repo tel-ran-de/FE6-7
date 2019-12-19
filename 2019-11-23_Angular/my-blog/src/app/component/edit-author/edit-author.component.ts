@@ -48,7 +48,7 @@ export class EditAuthorComponent implements OnInit {
   getErrorTranslations(): any {
     return  {
       required: 'This field is required',
-      minlength: 'Min length for this field is {{requiredLength}}',
+      minlength: 'Min length for this field is {{requiredLength}}, you typed {{actualLength}} symbols',
       maxlength: 'Max length for this fields is {{requiredLength}}'
     };
   }

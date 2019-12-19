@@ -1,6 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
 
+interface ErrorItem {
+  name: string;
+  value: string;
+}
+
 @Component({
   selector: 'app-validation-errors',
   templateUrl: './validation-errors.component.html',
@@ -18,8 +23,8 @@ export class ValidationErrorsComponent implements OnInit {
   ngOnInit() {
   }
 
-  errors(): any[] {
-    const errors = [];
+  errors(): ErrorItem[] {
+    const errors: ErrorItem[] = [];
     for (const errorName of Object.keys(this.control.errors)) {
       let errorTranslation = this.translations[errorName];
       const placeholder = this.getPlaceholder(this.translations[errorName]);
@@ -28,7 +33,7 @@ export class ValidationErrorsComponent implements OnInit {
         );
       errors.push({
         name: errorName,
-        value: errorTranslation
+        value: errorTranslation,
       });
     }
     return errors;

@@ -3,6 +3,7 @@
   <div class="form-group" >
     <label>First name</label>
     <input type="text" class="form-control" formControlName="firstName">
+    <div>{{authorForm.controls['firstName'].errors | json}}</div>
     <app-validation-errors
       [control]="getControl('firstName')"
       [translations]="getErrorTranslations()"
