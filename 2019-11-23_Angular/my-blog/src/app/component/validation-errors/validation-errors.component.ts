@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
+import {XRegExp} from 'xregexp';
 
 interface ErrorItem {
   name: string;
@@ -22,15 +23,17 @@ export class ValidationErrorsComponent implements OnInit {
 
   ngOnInit() {
   }
-
   errors(): ErrorItem[] {
     const errors: ErrorItem[] = [];
     for (const errorName of Object.keys(this.control.errors)) {
+      const regex = /{{.*?}}/ig;
       let errorTranslation = this.translations[errorName];
-      const placeholder = this.getPlaceholder(this.translations[errorName]);
-      errorTranslation = errorTranslation.replace(
-        '{{' + placeholder + '}}', this.control.errors[errorName][placeholder]
+      const placeholders = this.getPlaceholders(errorTranslation, regex);
+      for (const placeholder of placeholders) {
+        errorTranslation = errorTranslation.replace(
+          '{{' + placeholder + '}}', this.control.errors[errorName][placeholder]
         );
+      }
       errors.push({
         name: errorName,
         value: errorTranslation,
@@ -39,10 +42,8 @@ export class ValidationErrorsComponent implements OnInit {
     return errors;
   }
 
-  getPlaceholder(str: string) {
-    return str.substring(
-      str.lastIndexOf('{{') + 2,
-      str.lastIndexOf('}}')
-    );
+  getPlaceholders(str, regex) {
+    const matches = [];
+    return XRegExp.forEach(str, regex, (match) => matches.push(match[0]) );
   }
 }
