@@ -21,7 +21,6 @@ export class ValidationErrorsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(XRegExp);
   }
 
   errors(): ErrorItem[] {
@@ -47,7 +46,7 @@ export class ValidationErrorsComponent implements OnInit {
     const matches = [];
     const matchesWithCurlyBraces = str.match(regex);
     for (const match of matchesWithCurlyBraces) {
-      matches.push(match.replace('{{',"").replace('}}',""));
+      matches.push(match.slice(2, -2));
     }
     console.log(matches);
     return matches;
