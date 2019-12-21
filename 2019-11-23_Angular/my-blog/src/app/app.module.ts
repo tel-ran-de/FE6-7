@@ -11,9 +11,9 @@ import { PostPreviewComponent } from './component/post-preview/post-preview.comp
 import { NavigationItemComponent } from './component/navigation-item/navigation-item.component';
 import { AboutComponent } from './component/about/about.component';
 import { PostComponent } from './component/post/post.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { EditPostComponent } from './component/edit-post/edit-post.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { EditAuthorComponent } from './component/edit-author/edit-author.component';
 import { ValidationErrorsComponent } from './component/validation-errors/validation-errors.component';
 

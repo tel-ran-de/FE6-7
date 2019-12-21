@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AbstractControl} from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 
 interface ErrorItem {
   name: string;
@@ -21,16 +21,19 @@ export class ValidationErrorsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(XRegExp);
   }
 
   errors(): ErrorItem[] {
     const errors: ErrorItem[] = [];
     for (const errorName of Object.keys(this.control.errors)) {
       let errorTranslation = this.translations[errorName];
-      const placeholder = this.getPlaceholder(this.translations[errorName]);
-      errorTranslation = errorTranslation.replace(
-        '{{' + placeholder + '}}', this.control.errors[errorName][placeholder]
+      const placeholders = this.getPlaceholders(errorTranslation);
+      for (const placeholder of placeholders) {
+        errorTranslation = errorTranslation.replace(
+          '{{' + placeholder + '}}', this.control.errors[errorName][placeholder]
         );
+      }
       errors.push({
         name: errorName,
         value: errorTranslation,
@@ -39,10 +42,14 @@ export class ValidationErrorsComponent implements OnInit {
     return errors;
   }
 
-  getPlaceholder(str: string) {
-    return str.substring(
-      str.lastIndexOf('{{') + 2,
-      str.lastIndexOf('}}')
-    );
+  getPlaceholders(str) {
+    const regex: RegExp = /{{.*?}}/ig;
+    const matches = [];
+    const matchesWithCurlyBraces = str.match(regex);
+    for (const match of matchesWithCurlyBraces) {
+      matches.push(match.replace('{{',"").replace('}}',""));
+    }
+    console.log(matches);
+    return matches;
   }
 }
