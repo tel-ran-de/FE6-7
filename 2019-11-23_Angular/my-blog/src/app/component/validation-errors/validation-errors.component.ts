@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { AbstractControl } from '@angular/forms';
+import {TranslateService} from '@ngx-translate/core';
 
 interface ErrorItem {
   name: string;
@@ -18,9 +19,10 @@ export class ValidationErrorsComponent implements OnInit {
   @Input()
   translations: any;
 
-  constructor() { }
+  constructor(private translateService: TranslateService) { }
 
   ngOnInit() {
+
   }
 
   errors(): ErrorItem[] {
@@ -45,6 +47,9 @@ export class ValidationErrorsComponent implements OnInit {
     const regex: RegExp = /{{.*?}}/ig;
     const matches = [];
     const matchesWithCurlyBraces = str.match(regex);
+    if (!matchesWithCurlyBraces) {
+      return matches;
+    }
     for (const match of matchesWithCurlyBraces) {
       matches.push(match.slice(2, -2));
     }

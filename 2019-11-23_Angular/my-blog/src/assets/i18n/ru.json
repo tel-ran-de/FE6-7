@@ -1,0 +1,10 @@
+{
+  "hello_world": "Привет мир!!!",
+  "last_name": "Фамилия",
+  "first_name":"Имя",
+  "errors": {
+    "required": "Это поле необходимо заполнить",
+    "minlength": "Минимальная длина этого поля {{requiredLength}}, вы ввели {{actualLength}} символов(-а)",
+    "maxlength": "Максимальная длина этого поля {{requiredLength}}"
+  }
+}

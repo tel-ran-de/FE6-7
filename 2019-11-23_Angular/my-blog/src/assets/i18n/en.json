@@ -1,0 +1,10 @@
+{
+  "hello_world": "Hello, World",
+  "last_name": "Last name",
+  "first_name":"First name",
+  "errors": {
+    "required": "This field is required",
+    "minlength": "Min length for this field is {{requiredLength}}, you typed {{actualLength}} symbols",
+    "maxlength": "Max length for this fields is {{requiredLength}}"
+  }
+}

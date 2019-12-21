@@ -1,7 +1,8 @@
+<div>{{ 'hello_world' | translate }}</div>
 <form [formGroup]="authorForm">
   <input type="hidden" formControlName="id">
   <div class="form-group" >
-    <label>First name</label>
+    <label [translate]="'first_name'"></label>
     <input type="text" class="form-control" formControlName="firstName">
     <div>{{authorForm.controls['firstName'].errors | json}}</div>
     <app-validation-errors
@@ -11,7 +12,7 @@
     </app-validation-errors>
   </div>
   <div class="form-group" >
-    <label>Last name</label>
+    <label translate >last_name</label>
     <input type="text" class="form-control" formControlName="lastName" >
   </div>
   <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>

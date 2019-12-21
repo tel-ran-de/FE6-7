@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthorService} from '../../service/author/author.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-author',
@@ -10,9 +11,11 @@ import {AuthorService} from '../../service/author/author.service';
 export class EditAuthorComponent implements OnInit {
 
   authorForm: FormGroup;
+  errorTranslations: any;
 
   constructor(private fb: FormBuilder,
-              private authorService: AuthorService) { }
+              private authorService: AuthorService,
+              private translateService: TranslateService) { }
 
   ngOnInit() {
     this.authorForm = this.fb.group({
@@ -25,6 +28,9 @@ export class EditAuthorComponent implements OnInit {
         lastName: ['']
       }
     );
+    this.translateService.get('errors').subscribe((res: any) => {
+      this.errorTranslations = res;
+    });
 
     console.log(this.authorForm);
   }
@@ -41,15 +47,7 @@ export class EditAuthorComponent implements OnInit {
     return this.authorForm.controls[name];
   }
 
-  /*
-   {maxlength: {requiredLength: 5, actualLength: 7}}
-   */
-
   getErrorTranslations(): any {
-    return  {
-      required: 'This field is required',
-      minlength: 'Min length for this field is {{requiredLength}}, you typed {{actualLength}} symbols',
-      maxlength: 'Max length for this fields is {{requiredLength}}'
-    };
+    return this.errorTranslations;
   }
 }
