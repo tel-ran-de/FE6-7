@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AbstractControl} from '@angular/forms';
-import {XRegExp} from 'xregexp';
+import * as XRegExp from 'xregexp';
 
 interface ErrorItem {
   name: string;
@@ -25,8 +25,8 @@ export class ValidationErrorsComponent implements OnInit {
   }
   errors(): ErrorItem[] {
     const errors: ErrorItem[] = [];
+    const regex = /{{.*?}}/ig;
     for (const errorName of Object.keys(this.control.errors)) {
-      const regex = /{{.*?}}/ig;
       let errorTranslation = this.translations[errorName];
       const placeholders = this.getPlaceholders(errorTranslation, regex);
       for (const placeholder of placeholders) {
@@ -41,9 +41,9 @@ export class ValidationErrorsComponent implements OnInit {
     }
     return errors;
   }
-
   getPlaceholders(str, regex) {
     const matches = [];
-    return XRegExp.forEach(str, regex, (match) => matches.push(match[0]) );
+    XRegExp.forEach(str, regex, (match) => matches.push(match[0].slice(2, -2)));
+    return matches;
   }
 }
