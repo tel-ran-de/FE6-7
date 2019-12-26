@@ -12,27 +12,27 @@ export class NavigationComponent implements OnInit {
 
   navigationData: NavigationItemDto[] = [
     {
-      text: 'Home',
+      text: 'home',
       link: ''
     },
     {
-      text: 'About',
+      text: 'about',
       link: 'about'
     },
     {
-      text: 'Sample post',
+      text: 'sample_post',
       link: ''
     },
     {
-      text: 'Contact',
+      text: 'contact',
       link: ''
     },
     {
-      text: 'Create post',
+      text: 'create_post',
       link: 'new-post'
     },
     {
-      text: 'Create author',
+      text: 'create_author',
       link: 'new-author'
     }
   ];

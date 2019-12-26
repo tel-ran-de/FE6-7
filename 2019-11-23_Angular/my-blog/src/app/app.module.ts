@@ -18,6 +18,7 @@ import { EditAuthorComponent } from './component/edit-author/edit-author.compone
 import { ValidationErrorsComponent } from './component/validation-errors/validation-errors.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { LanguageSwitcherComponent } from './component/language-switcher/language-switcher.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +37,8 @@ export function createTranslateLoader(http: HttpClient) {
     PostComponent,
     EditPostComponent,
     EditAuthorComponent,
-    ValidationErrorsComponent
+    ValidationErrorsComponent,
+    LanguageSwitcherComponent
   ],
   imports: [
     BrowserModule,
