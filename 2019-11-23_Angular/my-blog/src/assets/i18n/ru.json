@@ -6,5 +6,21 @@
     "required": "Это поле необходимо заполнить",
     "minlength": "Минимальная длина этого поля {{requiredLength}}, вы ввели {{actualLength}} символов(-а)",
     "maxlength": "Максимальная длина этого поля {{requiredLength}}"
-  }
+  },
+  "home": "Домой",
+  "about": "О блоге",
+  "sample_post": "Пример поста",
+  "contact": "Контакты",
+  "create_post": "Создать пост",
+  "create_author": "Создать автора",
+  "submit": "Разместить",
+  "title": "Заголовок",
+  "body": "Содержание поста",
+  "date": "Дата",
+  "clean_blog": "Чистый Блог",
+  "blog_theme": "Блог от Start Bootstrap",
+  "older_posts": "Старые посты",
+  "menu": "Меню",
+  "language": "язык",
+  "copyright": "авторские права @ 2020"
 }
