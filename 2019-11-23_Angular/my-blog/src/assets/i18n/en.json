@@ -6,5 +6,22 @@
     "required": "This field is required",
     "minlength": "Min length for this field is {{requiredLength}}, you typed {{actualLength}} symbols",
     "maxlength": "Max length for this fields is {{requiredLength}}"
-  }
+  },
+  "home": "Home",
+  "about": "About",
+  "sample_post": "Sample post",
+  "contact": "Contact",
+  "create_post": "Create post",
+  "create_author": "Create author",
+  "submit": "Submit",
+  "title": "Title",
+  "body": "Body",
+  "date": "Date",
+  "clean_blog": "Clean Blog",
+  "blog_theme": "A Blog Theme by Start Bootstrap",
+  "older_posts": "Older Posts",
+  "menu": "Menu",
+  "language": "Language",
+  "copyright": "Copyright @ Your Website 2019"
+
 }
