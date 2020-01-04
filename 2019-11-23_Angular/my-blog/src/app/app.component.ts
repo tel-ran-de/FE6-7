@@ -8,8 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
 
-  constructor(private translateService: TranslateService) {
-    translateService.setDefaultLang('ru');
+  constructor() {
   }
   superPuperTitle = 'My super puper blog';
   newDivContents = 'Something to be added to div';

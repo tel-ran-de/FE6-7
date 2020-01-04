@@ -6,5 +6,19 @@
     "required": "Это поле необходимо заполнить",
     "minlength": "Минимальная длина этого поля {{requiredLength}}, вы ввели {{actualLength}} символов(-а)",
     "maxlength": "Максимальная длина этого поля {{requiredLength}}"
-  }
+  },
+  "title": "Заглавие",
+  "body": "Тело",
+  "date": "Дата",
+  "submit": "Отправить",
+  "navigation_data":{
+    "home": "Дом",
+    "about": "О нас",
+    "sample_post": "Образец поста",
+    "contact": "Контакт",
+    "create_post": "Создать пост",
+    "create_author": "Создать автора"
+  },
+  "older_posts": "Старые посты",
+  "select": "Выберите язык"
 }
