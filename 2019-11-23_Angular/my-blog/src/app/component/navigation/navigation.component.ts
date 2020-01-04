@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationItemDto} from '../../dto/NavigationItemDto';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navigation',
@@ -8,31 +9,31 @@ import {NavigationItemDto} from '../../dto/NavigationItemDto';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private translateService: TranslateService) { }
 
   navigationData: NavigationItemDto[] = [
     {
-      text: 'Home',
+      text: 'navigation_data.home',
       link: ''
     },
     {
-      text: 'About',
+      text: 'navigation_data.about',
       link: 'about'
     },
     {
-      text: 'Sample post',
+      text: 'navigation_data.sample_post',
       link: ''
     },
     {
-      text: 'Contact',
+      text: 'navigation_data.contact',
       link: ''
     },
     {
-      text: 'Create post',
+      text: 'navigation_data.create_post',
       link: 'new-post'
     },
     {
-      text: 'Create author',
+      text: 'navigation_data.create_author',
       link: 'new-author'
     }
   ];

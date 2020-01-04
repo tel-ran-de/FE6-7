@@ -1,6 +1,7 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PostService} from '../../service/post/post.service';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-edit-post',
@@ -12,7 +13,9 @@ export class EditPostComponent implements OnInit {
   postForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private postService: PostService) { }
+              private postService: PostService,
+              private translateService: TranslateService
+  ) { }
 
   ngOnInit() {
     this.postForm = this.fb.group({

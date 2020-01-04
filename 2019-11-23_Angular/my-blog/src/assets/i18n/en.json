@@ -6,5 +6,20 @@
     "required": "This field is required",
     "minlength": "Min length for this field is {{requiredLength}}, you typed {{actualLength}} symbols",
     "maxlength": "Max length for this fields is {{requiredLength}}"
-  }
+  },
+  "title": "Title",
+  "body": "Body",
+  "date": "Date",
+  "submit": "Submit",
+  "navigation_data":{
+    "home": "Home",
+    "about": "About",
+    "sample_post": "Sample post",
+    "contact": "Contact",
+    "create_post": "Create post",
+    "create_author": "Create author"
+  },
+  "older_posts": "Older posts",
+  "select": "Select language"
 }
+

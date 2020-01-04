@@ -1,0 +1,7 @@
+<label class="navbar-nav ml-auto lang_style" >
+  {{'select' | translate}}
+  <select #langselect (change)="translateService.use(langselect.value)">
+    <option *ngFor="let lang of translateService.getLangs()" [value]="lang">{{lang}}</option>
+  </select>
+</label>
+
