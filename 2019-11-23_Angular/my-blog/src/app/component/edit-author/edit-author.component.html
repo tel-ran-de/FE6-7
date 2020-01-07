@@ -15,7 +15,7 @@
     <label translate >last_name</label>
     <input type="text" class="form-control" formControlName="lastName" >
   </div>
-  <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>
+  <button type="submit" class="btn btn-primary" [translate]="'submit'" (click)="onSubmit($event)">Submit</button>
 </form>
 <div>{{authorForm.getRawValue() | json }}</div>
 <div>Dirty:{{authorForm.controls['firstName'].dirty}}</div>

@@ -17,7 +17,7 @@ export class EditPostComponent implements OnInit {
   ngOnInit() {
     this.postForm = this.fb.group({
       id: [],
-      title: ['Sample title'],
+      title: [''],
       body: [''],
       date: ['']
       }
