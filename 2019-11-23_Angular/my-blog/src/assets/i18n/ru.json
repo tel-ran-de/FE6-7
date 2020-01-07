@@ -6,5 +6,20 @@
     "required": "Это поле необходимо заполнить",
     "minlength": "Минимальная длина этого поля {{requiredLength}}, вы ввели {{actualLength}} символов(-а)",
     "maxlength": "Максимальная длина этого поля {{requiredLength}}"
-  }
+  },
+  "clean_blog": "Чистый блог",
+  "older_posts": "К старым постам",
+  "title": "Заголовок",
+  "body": "Тело поста",
+  "date": "Дата",
+  "submit": "Отправить",
+  "Home": "Домой",
+  "About": "О блоге",
+  "Sample post": "Пример поста",
+  "Contact": "Контакты",
+  "Create post": "Создать пост",
+  "Create author": "Создать автора",
+  "Menu": "Меню",
+  "English": "Английский",
+  "Russian": "Русский"
 }
